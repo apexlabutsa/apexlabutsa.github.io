@@ -551,18 +551,25 @@ ul.sponsors {
 	font-size: 11px;
 }
 /* Publications page text alignment */
-.publication {
+.publication 
+{
   text-align: justify;
   line-height: 1.6;
-}
-/* ---------- Gallery layout improvements ---------- */
 .thumbnails.da-thumbs.gallery-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  justify-content: flex-start;
-  padding-left: 0; /* ul default padding remove */
+  justify-content: center;   /* flex-start → center */
+  padding-left: 0;
 }
+
+.thumbnails.da-thumbs.gallery-grid > li {
+  list-style: none;
+  flex: 0 1 calc((100% - 48px) / 3);  
+  max-width: calc((100% - 48px) / 3);
+  box-sizing: border-box;
+}
+
 
 .thumbnails.da-thumbs.gallery-grid > li {
   list-style: none;
@@ -605,4 +612,18 @@ ul.sponsors {
 }
 @supports not (aspect-ratio: 1) {
   .thumbnails.da-thumbs .thumbnail { height: 220px; }
+}
+
+@media (max-width: 900px) {
+  .thumbnails.da-thumbs.gallery-grid > li {
+    flex: 0 1 calc((100% - 24px) / 2);
+    max-width: calc((100% - 24px) / 2);
+  }
+}
+
+@media (max-width: 600px) {
+  .thumbnails.da-thumbs.gallery-grid > li {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
 }
