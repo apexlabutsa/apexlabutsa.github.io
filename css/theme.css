@@ -555,16 +555,3 @@ ul.sponsors {
   text-align: justify;
   line-height: 1.6;
 }
-/* Fix padding and background for Publications header */
-.page-header {
-  background-color: transparent !important; /* সবুজ ব্যাকগ্রাউন্ড সরাবে */
-  padding-top: 10px !important;  /* উপরের ফাঁকা জায়গা কমাবে */
-  padding-bottom: 10px !important; /* নিচের ফাঁকা জায়গা কমাবে */
-  margin-top: 0 !important;
-  margin-bottom: 10px !important;
-}
-
-/* Optional: section spacing adjust */
-section {
-  padding: 0 0 10px 0 !important;
-}
