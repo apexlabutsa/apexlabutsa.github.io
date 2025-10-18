@@ -555,3 +555,43 @@ ul.sponsors {
   text-align: justify;
   line-height: 1.6;
 }
+/* ---------- Gallery layout improvements ---------- */
+.thumbnails.da-thumbs.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: flex-start;
+  padding-left: 0; /* ul default padding remove */
+}
+
+.thumbnails.da-thumbs.gallery-grid > li {
+  list-style: none;
+  flex: 1 1 300px;     /* min tile width ~300px */
+  max-width: 320px;    /* nice cap */
+}
+
+.thumbnails.da-thumbs .thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.thumbnails.da-thumbs .thumbnail img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 12px rgba(0,0,0,0.25);
+}
+
+.caption {
+  text-align: justify;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 8px;
+}
+.page-header {
+  background: transparent !important;
+  padding: 10px 0 !important;
+  margin: 0 0 12px !important;
+}
