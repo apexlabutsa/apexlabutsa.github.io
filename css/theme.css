@@ -359,3 +359,20 @@ ul.sponsors { margin: 40px 0; }
   }
 }
 
+/* --- FORCE 3-COLUMN GRID ON GALLERY (override Bootstrap row-fluid + span*) --- */
+.thumbnails.da-thumbs.gallery-grid { 
+  margin-left: 0 !important;
+}
+
+.row-fluid .thumbnails.da-thumbs.gallery-grid > li,
+.thumbnails.da-thumbs.gallery-grid > li[class*="span"] {
+  float: none !important;
+  margin-left: 0 !important;
+  width: auto !important;           /* kill .span4/.row-fluid widths */
+}
+
+.thumbnails.da-thumbs.gallery-grid > li {
+  flex: 0 0 calc((100% - 48px) / 3) !important;  /* 3 columns */
+  max-width: calc((100% - 48px) / 3) !important; 
+  box-sizing: border-box;
+}
