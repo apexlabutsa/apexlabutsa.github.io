@@ -349,3 +349,62 @@ ul.sponsors { margin: 40px 0; }
     margin-left: 0 !important;
   }
 }
+/* ==== Gallery: force 3 items per row, safe override ==== */
+.thumbnails.da-thumbs.gallery-grid {
+  /* kill old bootstrap offset; we control the layout */
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.thumbnails.da-thumbs.gallery-grid > li {
+  /* three columns with consistent gaps */
+  float: left !important;
+  box-sizing: border-box;
+  width: 32% !important;      /* 3 × 32% + 2 gaps × 2% = 100% */
+  margin-left: 2% !important; /* horizontal gap */
+}
+
+/* first column in each row: no left gap */
+.thumbnails.da-thumbs.gallery-grid > li:nth-child(3n+1) {
+  margin-left: 0 !important;
+}
+
+/* keep all thumbnails same visual height */
+.thumbnails.da-thumbs .thumbnail {
+  height: 220px !important;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+.thumbnails.da-thumbs .thumbnail img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* crop to fill (no stretching) */
+  display: block;
+}
+
+/* captions unchanged, just ensure spacing is neat */
+.thumbnails.da-thumbs.gallery-grid .caption {
+  text-align: justify;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 8px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {       /* 2 per row on tablets */
+  .thumbnails.da-thumbs.gallery-grid > li {
+    width: 49% !important;        /* 2 × 49% + 1 × 2% ≈ 100% */
+    margin-left: 2% !important;
+  }
+  .thumbnails.da-thumbs.gallery-grid > li:nth-child(2n+1) {
+    margin-left: 0 !important;
+  }
+}
+@media (max-width: 600px) {       /* 1 per row on phones */
+  .thumbnails.da-thumbs.gallery-grid > li {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+}
+
