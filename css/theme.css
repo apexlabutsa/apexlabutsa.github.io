@@ -458,6 +458,11 @@ ul.sponsors { margin: 40px 0; }
   transition: transform 0.2s ease-in-out;
 }
 
+/* Hover effect (optional but looks nice) */
+#footer .footer-logo:hover {
+  transform: scale(1.05);
+}
+
 /* Copyright */
 .footer-bottom {
   margin-top: 14px;
