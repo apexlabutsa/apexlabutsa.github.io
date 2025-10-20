@@ -184,32 +184,51 @@
             </div>-->
          </div>
       </div>
-      <footer id="footer">
-         <div class="container-fluid">
-            <div class="row-fluid">
-               <div class="span5">
-                  <h3>Contact Information</h3>
-                  <a href="mailto:taslima.akter@utsa.edu">Email: taslima.akter@utsa.edu</a>
-               </div>
-               <div class="span2">
-                  <a href="https://mybrandnewlogo.com/"><img src = "thumbs/generic-logo.JPG" alt="research-lab-logo"/></a>
-               </div>
-               <div class="span5">
-                  <h3>Address</h3>
-                  <p>APEX Lab<br>
-                     506 Dolorosa St<br>
-                     San Antonio, Texas<br>
-                     USA 78204
-                  </p>
-                  <a href="https://maps.app.goo.gl/StTmXfGu2sQjGXqVA">Show Map</a>
-               </div>
-            </div>
-         </div>
-      </footer>
+      <footer id="footer" role="contentinfo" class="site-footer">
+  <div class="container-fluid">
+    <div class="row-fluid footer-row">
+      <!-- Left: Contact -->
+      <div class="span5 footer-col">
+        <h3 class="footer-title">Contact Information</h3>
+        <p class="footer-text">
+          <a class="footer-link" href="mailto:taslima.akter@utsa.edu" aria-label="Email Taslima Akter">
+            Email: taslima.akter@utsa.edu
+          </a>
+        </p>
+      </div>
 
-      <!-- Javascript files -->
-      <script src="js/jquery-1.9.1.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script> $('#main-carousel').carousel(); </script>
-   </body>
-</html>
+      <!-- Center: Logo -->
+      <div class="span2 footer-col footer-center">
+        <a href="https://mybrandnewlogo.com/" class="footer-logo-link" aria-label="APEX Lab logo">
+          <img class="footer-logo" src="thumbs/apexlab-logo.png" alt="Accessibility and Privacy Enhancing EXperience (APEX) Lab logo">
+        </a>
+      </div>
+
+      <!-- Right: Address -->
+      <div class="span5 footer-col">
+        <h3 class="footer-title">Address</h3>
+        <address class="footer-text">
+          APEX Lab<br>
+          506 Dolorosa St<br>
+          San Antonio, Texas<br>
+          USA 78204
+        </address>
+        <p class="footer-text">
+          <a class="footer-link" href="https://maps.app.goo.gl/StTmXfGu2sQjGXqVA">Show Map</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© <span id="year"></span> Accessibility and Privacy Enhancing EXperience (APEX) Lab • University of Texas at San Antonio</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Javascript files -->
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+  if (document.getElementById('main-carousel')) $('#main-carousel').carousel();
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
