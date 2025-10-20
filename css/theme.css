@@ -444,15 +444,18 @@ ul.sponsors { margin: 40px 0; }
   transform: translateY(-1px);
 }
 
-/* Logo clean transparent */
+/* ===== Footer logo size tuning ===== */
 #footer .footer-logo {
-  width: 120px;
+  width: 160px;         
   height: auto;
   border: none;
   outline: none;
   box-shadow: none;
   background: transparent;
   border-radius: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  transition: transform 0.2s ease-in-out;
 }
 
 /* Copyright */
