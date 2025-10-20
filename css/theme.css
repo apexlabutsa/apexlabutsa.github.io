@@ -407,62 +407,60 @@ ul.sponsors { margin: 40px 0; }
     margin-left: 0 !important;
   }
 }
-/* ===== Recent News (Home) — uniform cards & thumbnails ===== */
+/* ===== FINAL FIX: Recent News cards (3 per row, equal thumbnails, justified text) ===== */
 #media .post_row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 24px;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  gap: 24px !important;
   margin-left: 0 !important;
 }
 
 #media .post_row .post {
-  flex: 0 1 calc(33.33% - 16px);
-  height: auto;
-  display: flex;
-  flex-direction: column;
+  width: auto !important;
+  height: auto !important;
+  background: #fff !important;
+  border-radius: 4px !important;
+  box-shadow: 1px 1px 2px 0 #E0E0E0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 0 1 calc(33.33% - 16px) !important; /* 3 per row */
 }
 
 #media .post_row .post .img {
-  height: 180px;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.12);
+  height: 180px !important;
+  overflow: hidden !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 8px rgba(0,0,0,0.12) !important;
 }
 
 #media .post_row .post .img img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
-  display: block;
+  display: block !important;
 }
 
-/* Make all text justified */
-#media .post_row .post .text,
-#media .post_row .post .text p,
+#media .post_row .post .text {
+  width: 100% !important;
+  margin: 18px auto 0 !important;
+  text-align: justify !important;
+  text-justify: inter-word !important;
+}
+
 #media .post_row .post .text h5,
+#media .post_row .post .text h5 a,
+#media .post_row .post .text p,
 #media .post_row .post .text span {
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: justify !important;
+  text-justify: inter-word !important;
+  line-height: 1.55 !important;
 }
 
-/* Headings and links inside text also justified */
-#media .post_row .post .text h5 a {
-  display: inline-block;
-  text-align: justify;
-  text-justify: inter-word;
-  line-height: 1.35;
-}
-
-/* Responsive behavior for smaller screens */
 @media (max-width: 992px) {
-  #media .post_row .post {
-    flex: 0 1 calc(50% - 12px);
-  }
+  #media .post_row .post { flex: 0 1 calc(50% - 12px) !important; }
 }
 
 @media (max-width: 600px) {
-  #media .post_row .post {
-    flex: 0 1 100%;
-  }
+  #media .post_row .post { flex: 0 1 100% !important; }
 }
