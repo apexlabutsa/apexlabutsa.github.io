@@ -553,3 +553,8 @@ ul.sponsors { margin: 40px 0; }
   .footer-row { flex-direction: column; }
   .footer-logo { max-height: 90px; margin-top: 12px; }
 }
+/* Footer logo: remove circular (round) shape */
+.footer-logo {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
