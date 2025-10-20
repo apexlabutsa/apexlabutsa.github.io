@@ -407,68 +407,62 @@ ul.sponsors { margin: 40px 0; }
     margin-left: 0 !important;
   }
 }
-/* ==== Gallery: Always 3 images per row, consistent height ==== */
-.thumbnails.da-thumbs.gallery-grid {
-  margin-left: 0 !important;
-  padding-left: 0 !important;
-  display: block !important;
-  clear: both;
-}
-
-.thumbnails.da-thumbs.gallery-grid > li {
-  float: left !important;
-  width: 32% !important;
-  margin-left: 2% !important;
-  margin-bottom: 30px !important;
-  box-sizing: border-box;
-}
-
-.thumbnails.da-thumbs.gallery-grid > li:nth-child(3n+1) {
+/* ===== Recent News (Home) — uniform cards & thumbnails ===== */
+#media .post_row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
   margin-left: 0 !important;
 }
 
-.thumbnails.da-thumbs .thumbnail {
-  height: 220px !important;
+#media .post_row .post {
+  flex: 0 1 calc(33.33% - 16px);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#media .post_row .post .img {
+  height: 180px;
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.12);
 }
 
-.thumbnails.da-thumbs .thumbnail img {
+#media .post_row .post .img img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
   display: block;
-  transition: transform .2s, box-shadow .2s;
 }
 
-.thumbnails.da-thumbs .thumbnail img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 12px rgba(0,0,0,0.25);
-}
-
-.thumbnails.da-thumbs.gallery-grid .caption {
+/* Make all text justified */
+#media .post_row .post .text,
+#media .post_row .post .text p,
+#media .post_row .post .text h5,
+#media .post_row .post .text span {
   text-align: justify;
-  font-size: 14px;
-  line-height: 1.6;
-  margin-top: 8px;
+  text-justify: inter-word;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .thumbnails.da-thumbs.gallery-grid > li {
-    width: 48% !important;
-    margin-left: 2% !important;
-  }
-  .thumbnails.da-thumbs.gallery-grid > li:nth-child(2n+1) {
-    margin-left: 0 !important;
+/* Headings and links inside text also justified */
+#media .post_row .post .text h5 a {
+  display: inline-block;
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.35;
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 992px) {
+  #media .post_row .post {
+    flex: 0 1 calc(50% - 12px);
   }
 }
 
 @media (max-width: 600px) {
-  .thumbnails.da-thumbs.gallery-grid > li {
-    width: 100% !important;
-    margin-left: 0 !important;
+  #media .post_row .post {
+    flex: 0 1 100%;
   }
 }
-
