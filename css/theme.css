@@ -483,3 +483,26 @@ ul.sponsors { margin: 40px 0; }
   align-items: flex-start;
   flex-wrap: wrap;
 }
+/* ===== Tighten space right ABOVE the footer ===== */
+
+/* kill big bottom margin on the last section */
+#media { margin-bottom: 12px !important; }
+#media .post_row { margin-bottom: 0 !important; }
+
+/* if any <hr> is the last thing before the footer, hide it */
+.container > hr:last-child,
+.container-fluid > hr:last-child { display: none !important; }
+
+/* make sure the element just before #footer never pushes it down */
+.container > *:last-child,
+.container-fluid > *:last-child,
+.row-fluid:last-of-type {
+  margin-bottom: 0 !important;
+}
+
+/* trim the footer’s own top padding */
+#footer { padding-top: 18px !important; }
+#footer .container-fluid { padding-top: 0 !important; }
+#footer .row-fluid { margin-top: 0 !important; }
+/* footer logo size (adjust as you like) */
+#footer .footer-logo { width: 140px; height: auto; }
