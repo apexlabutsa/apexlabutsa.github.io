@@ -185,45 +185,53 @@
          </div>
       </div>
       <footer id="footer">
-  <div class="container-fluid footer-container">
-    <div class="footer-top">
-      <!-- Left: Contact -->
+  <div class="footer-wrap">
+    <!-- top row: left & right columns -->
+    <div class="footer-row">
+      <!-- LEFT: Contact -->
       <div class="footer-col footer-left">
-        <h3 class="footer-title">Contact Information</h3>
-        <p><a class="footer-link" href="mailto:taslima.akter@utsa.edu">Email: taslima.akter@utsa.edu</a></p>
+        <h3 class="footer-title">CONTACT INFORMATION</h3>
+        <div class="footer-rule"></div>
+        <p>
+          <a class="footer-link" href="mailto:taslima.akter@utsa.edu">
+            Email: taslima.akter@utsa.edu
+          </a>
+        </p>
       </div>
 
-      <!-- Right: Address -->
+      <!-- RIGHT: Address -->
       <div class="footer-col footer-right">
-        <h3 class="footer-title">Address</h3>
-        <address>
+        <h3 class="footer-title">ADDRESS</h3>
+        <div class="footer-rule"></div>
+        <address class="footer-address">
           APEX Lab<br>
           506 Dolorosa St<br>
           San Antonio, Texas<br>
           USA 78204<br>
-          <a class="footer-link" href="https://maps.app.goo.gl/StTmXfGu2sQjGXqVA">Show Map</a>
+          <a class="footer-link footer-map" href="https://maps.app.goo.gl/StTmXfGu2sQjGXqVA">Show Map</a>
         </address>
       </div>
     </div>
 
-    <!-- Centered logo -->
+    <!-- center logo row -->
     <div class="footer-center">
-      <img class="footer-logo" src="thumbs/apexlab-logo.png" alt="APEX Lab logo">
-      <p class="footer-lab-name">
-        Accessibility and Privacy Enhancing EXperience (APEX) Lab
+      <img class="footer-logo" src="thumbs/apexlab-logo.png"
+           alt="Accessibility and Privacy Enhancing EXperience (APEX) Lab logo">
+      <p class="footer-labname">
+        Accessibility and Privacy<br>
+        Enhancing EXperience<br>
+        (APEX) Lab
       </p>
     </div>
 
-    <!-- Bottom copyright -->
+    <!-- bottom line -->
     <div class="footer-bottom">
-      <p>© <span id="year"></span> Accessibility and Privacy Enhancing EXperience (APEX) Lab • University of Texas at San Antonio</p>
+      © <span id="year"></span> Accessibility and Privacy Enhancing EXperience (APEX) Lab •
+      University of Texas at San Antonio
     </div>
   </div>
 </footer>
 
-<!-- JS -->
-<script src="js/jquery-1.9.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
