@@ -553,12 +553,3 @@ ul.sponsors { margin: 40px 0; }
   .footer-row { flex-direction: column; }
   .footer-logo { max-height: 90px; margin-top: 12px; }
 }
-/* Reduce gap between last line of address and Show Map link */
-.footer-col address {
-  margin-bottom: 4px !important;
-  line-height: 1.4;
-}
-
-.footer-col .footer-text:last-child {
-  margin-top: 0 !important;
-}
