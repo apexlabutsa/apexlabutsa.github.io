@@ -407,18 +407,18 @@ ul.sponsors { margin: 40px 0; }
     margin-left: 0 !important;
   }
 }
-/* ===== FINAL FIX: Recent News — Equal Height + 3 per Row + Justified Text ===== */
+/* ===== FINAL FIX: Recent News — 3 per row, aligned images, justified text ===== */
 #media .post_row {
   display: flex !important;
   flex-wrap: wrap !important;
   justify-content: space-between !important;
   align-items: stretch !important;
-  gap: 24px !important;
+  gap: 20px !important;
   margin-left: 0 !important;
 }
 
 #media .post_row .post {
-  flex: 0 1 calc(33.33% - 16px) !important; /* Always 3 per row */
+  flex: 0 1 calc(33.33% - 14px) !important; /* 3 per row */
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
@@ -426,13 +426,15 @@ ul.sponsors { margin: 40px 0; }
   border-radius: 6px !important;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1) !important;
   overflow: hidden !important;
+  padding-bottom: 10px !important;
 }
 
-/* Equal size image area */
+/* Ensure equal height image area */
 #media .post_row .post .img {
   height: 200px !important;
   overflow: hidden !important;
   border-radius: 6px 6px 0 0 !important;
+  flex-shrink: 0 !important;
 }
 
 #media .post_row .post .img img {
@@ -442,7 +444,7 @@ ul.sponsors { margin: 40px 0; }
   display: block !important;
 }
 
-/* Text alignment fix (fully justified) */
+/* Make all text justified */
 #media .post_row .post .text,
 #media .post_row .post .text p,
 #media .post_row .post .text h5,
@@ -454,17 +456,25 @@ ul.sponsors { margin: 40px 0; }
   margin-bottom: 6px !important;
 }
 
+/* Add balanced padding for text */
 #media .post_row .post .text {
-  padding: 12px 15px !important;
+  padding: 10px 15px !important;
+  flex-grow: 1 !important;
 }
 
+/* Style the title links */
 #media .post_row .post .text h5 a {
   font-weight: 600 !important;
   color: #004080 !important;
   text-decoration: none !important;
 }
 
-/* Responsive behavior */
+/* Equalize card height automatically */
+#media .post_row .post {
+  height: 100% !important;
+}
+
+/* Responsive layout */
 @media (max-width: 992px) {
   #media .post_row .post {
     flex: 0 1 calc(50% - 12px) !important;
