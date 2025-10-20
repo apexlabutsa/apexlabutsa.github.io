@@ -407,31 +407,32 @@ ul.sponsors { margin: 40px 0; }
     margin-left: 0 !important;
   }
 }
-/* ===== FINAL FIX: Recent News cards (3 per row, equal thumbnails, justified text) ===== */
+/* ===== FINAL FIX: Recent News — Equal Height + 3 per Row + Justified Text ===== */
 #media .post_row {
   display: flex !important;
   flex-wrap: wrap !important;
   justify-content: space-between !important;
+  align-items: stretch !important;
   gap: 24px !important;
   margin-left: 0 !important;
 }
 
 #media .post_row .post {
-  width: auto !important;
-  height: auto !important;
-  background: #fff !important;
-  border-radius: 4px !important;
-  box-shadow: 1px 1px 2px 0 #E0E0E0 !important;
+  flex: 0 1 calc(33.33% - 16px) !important; /* Always 3 per row */
   display: flex !important;
   flex-direction: column !important;
-  flex: 0 1 calc(33.33% - 16px) !important; /* 3 per row */
+  justify-content: space-between !important;
+  background: #fff !important;
+  border-radius: 6px !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1) !important;
+  overflow: hidden !important;
 }
 
+/* Equal size image area */
 #media .post_row .post .img {
-  height: 180px !important;
+  height: 200px !important;
   overflow: hidden !important;
-  border-radius: 8px !important;
-  box-shadow: 0 0 8px rgba(0,0,0,0.12) !important;
+  border-radius: 6px 6px 0 0 !important;
 }
 
 #media .post_row .post .img img {
@@ -441,26 +442,37 @@ ul.sponsors { margin: 40px 0; }
   display: block !important;
 }
 
-#media .post_row .post .text {
-  width: 100% !important;
-  margin: 18px auto 0 !important;
-  text-align: justify !important;
-  text-justify: inter-word !important;
-}
-
+/* Text alignment fix (fully justified) */
+#media .post_row .post .text,
+#media .post_row .post .text p,
 #media .post_row .post .text h5,
 #media .post_row .post .text h5 a,
-#media .post_row .post .text p,
 #media .post_row .post .text span {
   text-align: justify !important;
   text-justify: inter-word !important;
   line-height: 1.55 !important;
+  margin-bottom: 6px !important;
 }
 
+#media .post_row .post .text {
+  padding: 12px 15px !important;
+}
+
+#media .post_row .post .text h5 a {
+  font-weight: 600 !important;
+  color: #004080 !important;
+  text-decoration: none !important;
+}
+
+/* Responsive behavior */
 @media (max-width: 992px) {
-  #media .post_row .post { flex: 0 1 calc(50% - 12px) !important; }
+  #media .post_row .post {
+    flex: 0 1 calc(50% - 12px) !important;
+  }
 }
 
 @media (max-width: 600px) {
-  #media .post_row .post { flex: 0 1 100% !important; }
+  #media .post_row .post {
+    flex: 0 1 100% !important;
+  }
 }
