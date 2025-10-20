@@ -407,3 +407,71 @@ ul.sponsors { margin: 40px 0; }
     margin-left: 0 !important;
   }
 }
+/* ===== Footer polish (email link, map button, logo, © line) ===== */
+#footer {
+  background: #000;
+  padding: 35px 0 15px;
+  text-align: center;
+  color: #fff;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+/* Email link */
+#footer .footer-link {
+  color: #8dcff0;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(141, 207, 240, 0.6);
+  padding-bottom: 2px;
+}
+#footer .footer-link:hover {
+  color: #b4e3ff;
+  border-bottom-style: solid;
+}
+
+/* "Show Map" button */
+#footer .footer-btn {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 6px 14px;
+  border: 1px solid #3aa0d8;
+  border-radius: 6px;
+  color: #8dcff0;
+  text-decoration: none;
+  transition: all .15s ease-in-out;
+}
+#footer .footer-btn:hover {
+  background: rgba(141, 207, 240, 0.12);
+  transform: translateY(-1px);
+}
+
+/* Logo clean transparent */
+#footer .footer-logo {
+  width: 120px;
+  height: auto;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0;
+}
+
+/* Copyright */
+.footer-bottom {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #30393c;
+  font-size: 12px;
+  color: #9aa7b4;
+  text-align: center;
+}
+
+/* Alignment for layout */
+#footer .span5 {
+  text-align: center;
+}
+#footer .row-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
