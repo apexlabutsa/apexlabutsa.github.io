@@ -506,3 +506,12 @@ ul.sponsors { margin: 40px 0; }
 #footer .row-fluid { margin-top: 0 !important; }
 /* footer logo size (adjust as you like) */
 #footer .footer-logo { width: 200px; height: auto; }
+
+/* ===== Justify alignment for Recent News text ===== */
+#media .post_row p,
+#media .post_row div,
+#media .post_row span {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.6;
+}
