@@ -507,11 +507,24 @@ ul.sponsors { margin: 40px 0; }
 /* footer logo size (adjust as you like) */
 #footer .footer-logo { width: 200px; height: auto; }
 
-/* ===== Justify alignment for Recent News text ===== */
-#media .post_row p,
-#media .post_row div,
-#media .post_row span {
-  text-align: justify;
-  text-justify: inter-word;
-  line-height: 1.6;
+/* ===== Force-justify only the Recent News cards ===== */
+.row-fluid.marketing .feature-item p,
+.row-fluid.marketing .feature-item h4,
+.row-fluid.marketing .feature-item h4 a,
+.row-fluid.marketing .feature-item h5,
+.row-fluid.marketing .feature-item .date {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+  line-height: 1.6 !important;
 }
+
+/* Make the clickable headline behave like a block so it justifies nicely */
+.row-fluid.marketing .feature-item h4 a {
+  display: block !important;
+}
+
+/* Optional: keep the tiny date a bit tighter but still justified */
+.row-fluid.marketing .feature-item h5 {
+  margin-bottom: 6px !important;
+}
+
