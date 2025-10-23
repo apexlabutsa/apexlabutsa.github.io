@@ -507,5 +507,13 @@ ul.sponsors { margin: 40px 0; }
 /* footer logo size (adjust as you like) */
 #footer .footer-logo { width: 200px; height: auto; }
 
+/* === Justify only the paragraph text under each Recent News item === */
+.row-fluid.marketing .feature-item > p {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+  line-height: 1.6 !important;
+  word-spacing: 0.08em;
+  margin-top: 6px;
+}
 
 
