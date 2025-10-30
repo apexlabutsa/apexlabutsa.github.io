@@ -515,46 +515,77 @@ ul.sponsors { margin: 40px 0; }
   word-spacing: 0.08em;
   margin-top: 6px;
 }
-/* ===== People Page: Vertically Center Photo and Text ===== */
+/* ===== People page: make each person row a flex row and center items ===== */
 
-/* Add spacing between sections */
+/* Only the two-column rows inside the three sections */
 #principalinvestigator .row-fluid,
 #graduate .row-fluid,
 #undergraduate .row-fluid {
-  margin-bottom: 22px;
+  display: flex !important;          /* use flexbox row */
+  align-items: center !important;     /* vertical center image vs text */
+  gap: 18px;                          /* some space between cols */
+  margin-bottom: 22px;                /* spacing between person cards */
 }
 
-/* Center the thumbnails vertically */
-#principalinvestigator .row-fluid .span3 .thumbnail,
-#graduate .row-fluid .span3 .thumbnail,
-#undergraduate .row-fluid .span3 .thumbnail {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 160px;           /* adjust height as needed */
-  margin: 0;
-  border-radius: 6px;
-}
-
-/* Keep image size consistent */
-#principalinvestigator .row-fluid .span3 .thumbnail img,
-#graduate .row-fluid .span3 .thumbnail img,
-#undergraduate .row-fluid .span3 .thumbnail img {
-  max-height: 140px;
-  width: auto;
-  height: auto;
-  object-fit: cover;
-  display: block;
-}
-
-/* Vertically align text column */
+/* Turn off old floats and give explicit widths (Bootstrap 2 spans mimic) */
+#principalinvestigator .row-fluid .span3,
+#graduate .row-fluid .span3,
+#undergraduate .row-fluid .span3,
 #principalinvestigator .row-fluid .span9,
 #graduate .row-fluid .span9,
 #undergraduate .row-fluid .span9 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 160px;       /* same height as thumbnail */
+  float: none !important;             /* cancel float */
+  margin: 0 !important;               /* remove float margins */
 }
 
+/* Left column (photo) width */
+#principalinvestigator .row-fluid .span3,
+#graduate .row-fluid .span3,
+#undergraduate .row-fluid .span3 {
+  width: 26% !important;              /* ~span3 of 12 cols */
+  min-width: 180px;                   /* keep a reasonable min size */
+  display: flex;                      /* so we can center thumbnail if needed */
+  justify-content: center;            /* horizontal center inside the photo col */
+}
 
+/* Right column (text) width */
+#principalinvestigator .row-fluid .span9,
+#graduate .row-fluid .span9,
+#undergraduate .row-fluid .span9 {
+  width: 74% !important;              /* ~span9 of 12 cols */
+}
+
+/* Keep thumbnail nice and centered without fixed heights */
+#principalinvestigator .row-fluid .span3 .thumbnail,
+#graduate .row-fluid .span3 .thumbnail,
+#undergraduate .row-fluid .span3 .thumbnail {
+  margin: 0;                          /* remove default margins */
+  border-radius: 6px;
+  display: block;                     /* block so width/auto works */
+}
+
+/* Image sizing: scale down if large, no stretching */
+#principalinvestigator .row-fluid .span3 .thumbnail img,
+#graduate .row-fluid .span3 .thumbnail img,
+#undergraduate .row-fluid .span3 .thumbnail img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile: stack columns again */
+@media (max-width: 767px) {
+  #principalinvestigator .row-fluid,
+  #graduate .row-fluid,
+  #undergraduate .row-fluid {
+    display: block !important;
+  }
+  #principalinvestigator .row-fluid .span3,
+  #graduate .row-fluid .span3,
+  #undergraduate .row-fluid .span3,
+  #principalinvestigator .row-fluid .span9,
+  #graduate .row-fluid .span9,
+  #undergraduate .row-fluid .span9 {
+    width: 100% !important;
+  }
+}
