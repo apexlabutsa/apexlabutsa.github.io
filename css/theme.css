@@ -515,5 +515,46 @@ ul.sponsors { margin: 40px 0; }
   word-spacing: 0.08em;
   margin-top: 6px;
 }
+/* ===== People Page: Vertically Center Photo and Text ===== */
+
+/* Add spacing between sections */
+#principalinvestigator .row-fluid,
+#graduate .row-fluid,
+#undergraduate .row-fluid {
+  margin-bottom: 22px;
+}
+
+/* Center the thumbnails vertically */
+#principalinvestigator .row-fluid .span3 .thumbnail,
+#graduate .row-fluid .span3 .thumbnail,
+#undergraduate .row-fluid .span3 .thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;           /* adjust height as needed */
+  margin: 0;
+  border-radius: 6px;
+}
+
+/* Keep image size consistent */
+#principalinvestigator .row-fluid .span3 .thumbnail img,
+#graduate .row-fluid .span3 .thumbnail img,
+#undergraduate .row-fluid .span3 .thumbnail img {
+  max-height: 140px;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Vertically align text column */
+#principalinvestigator .row-fluid .span9,
+#graduate .row-fluid .span9,
+#undergraduate .row-fluid .span9 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 160px;       /* same height as thumbnail */
+}
 
 
