@@ -589,3 +589,25 @@ ul.sponsors { margin: 40px 0; }
     width: 100% !important;
   }
 }
+/* ===== Header Background Logo Watermark ===== */
+header.jumbotron.subhead {
+  position: relative;
+  background-color: #000;               /* black base like current header */
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  padding: 40px 0 20px;
+  background-image: url('../thumbs/apexlab-logo.png');  /* path to your logo */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 500px auto;          /* control logo size */
+  background-blend-mode: overlay;       /* soft blend of logo + black */
+  opacity: 1;                           /* full visibility of text */
+}
+
+/* Make sure text stays crisp */
+header.jumbotron.subhead p.lead,
+header.jumbotron.subhead h1 {
+  position: relative;
+  z-index: 2;
+}
