@@ -601,7 +601,7 @@ header.jumbotron.subhead::before {
   inset: 0;
   background: url("../thumbs/apexlab-logo.png") no-repeat center;
   background-size: 520px auto;
-  opacity: 0.32;                  /* previously 0.16 — increase for stronger look */
+  opacity: 0.32;                  /* for stronger look */
   mix-blend-mode: screen;         /* makes logo more visible on dark background */
   z-index: 1;
   pointer-events: none;
