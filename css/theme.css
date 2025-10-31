@@ -589,33 +589,30 @@ ul.sponsors { margin: 40px 0; }
     width: 100% !important;
   }
 }
-/* ===== Header watermark logo over gradient, under text ===== */
+/* ===== Header watermark logo stronger visibility ===== */
 header.jumbotron.subhead {
   position: relative;
   overflow: hidden;
 }
 
-/* Put the logo above the gradient but below the text */
 header.jumbotron.subhead::before {
   content: "";
   position: absolute;
-  inset: 0;                       /* top/right/bottom/left: 0 */
+  inset: 0;
   background: url("../thumbs/apexlab-logo.png") no-repeat center;
-  background-size: 520px auto;    /* adjust size as you like */
-  opacity: 0.16;                  /* faint watermark */
-  z-index: 1;                     /* sits under the text */
+  background-size: 520px auto;
+  opacity: 0.32;                  /* previously 0.16 — increase for stronger look */
+  mix-blend-mode: screen;         /* makes logo more visible on dark background */
+  z-index: 1;
   pointer-events: none;
 }
 
-/* Ensure the existing dark overlay (from .jumbotron:after) stays below the logo */
 header.jumbotron.subhead::after {
   z-index: 0 !important;
 }
 
-/* Keep header text above the watermark */
 header.jumbotron.subhead h1,
 header.jumbotron.subhead p.lead {
   position: relative;
   z-index: 2;
 }
-
