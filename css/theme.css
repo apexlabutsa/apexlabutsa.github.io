@@ -589,25 +589,33 @@ ul.sponsors { margin: 40px 0; }
     width: 100% !important;
   }
 }
-/* ===== Header Background Logo Watermark ===== */
+/* ===== Header watermark logo over gradient, under text ===== */
 header.jumbotron.subhead {
   position: relative;
-  background-color: #000;               /* black base like current header */
-  color: #fff;
-  text-align: center;
   overflow: hidden;
-  padding: 40px 0 20px;
-  background-image: url('../thumbs/apexlab-logo.png');  /* path to your logo */
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 500px auto;          /* control logo size */
-  background-blend-mode: overlay;       /* soft blend of logo + black */
-  opacity: 1;                           /* full visibility of text */
 }
 
-/* Make sure text stays crisp */
-header.jumbotron.subhead p.lead,
-header.jumbotron.subhead h1 {
+/* Put the logo above the gradient but below the text */
+header.jumbotron.subhead::before {
+  content: "";
+  position: absolute;
+  inset: 0;                       /* top/right/bottom/left: 0 */
+  background: url("../thumbs/apexlab-logo.png") no-repeat center;
+  background-size: 520px auto;    /* adjust size as you like */
+  opacity: 0.16;                  /* faint watermark */
+  z-index: 1;                     /* sits under the text */
+  pointer-events: none;
+}
+
+/* Ensure the existing dark overlay (from .jumbotron:after) stays below the logo */
+header.jumbotron.subhead::after {
+  z-index: 0 !important;
+}
+
+/* Keep header text above the watermark */
+header.jumbotron.subhead h1,
+header.jumbotron.subhead p.lead {
   position: relative;
   z-index: 2;
 }
+
