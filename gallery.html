@@ -5,23 +5,51 @@
     <title>Gallery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Apex Lab, University of Texas San Antonio" />
-    <meta name="author" content="" />
 
-    <!-- Le styles -->
+    <!-- CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
     <link href="css/theme.css" rel="stylesheet" />
+
+    <!-- Blueimp CSS -->
     <link href="css/blueimp-gallery.min.css" rel="stylesheet" />
     <link href="css/blueimp-gallery-video.css" rel="stylesheet" />
+
+    <style>
+      /* Fix Close, Prev, Next visibility */
+      .blueimp-gallery > .close,
+      .blueimp-gallery > .prev,
+      .blueimp-gallery > .next {
+        color: #fff;
+        text-shadow: 0px 0px 10px #000;
+        opacity: 0.9;
+        font-size: 45px;
+      }
+    </style>
   </head>
 
   <body>
+
+    <!-- Blueimp Gallery MUST be here at top of body -->
+    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+      <div class="slides"></div>
+      <h3 class="title"></h3>
+      <a class="prev">‹</a>
+      <a class="next">›</a>
+      <a class="close">×</a>
+      <a class="play-pause"></a>
+      <ol class="indicator"></ol>
+    </div>
+
     <div class="container">
+
+      <!-- HEADER -->
       <header class="jumbotron subhead" id="overview">
         <p class="lead"> University of Texas at San Antonio </p>
         <h1>Accessibility and Privacy Enhancing EXperience (APEX) Lab</h1>
       </header>
 
+      <!-- MENU -->
       <div class="masthead">
         <div class="navbar">
           <div class="navbar-inner">
@@ -41,16 +69,7 @@
 
       <hr />
 
-      <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
-        <div class="slides"></div>
-        <h3 class="title"> Gallery </h3>
-        <a class="prev">‹</a>
-        <a class="next">›</a>
-        <a class="close">×</a>
-        <a class="play-pause"></a>
-        <ol class="indicator"></ol>
-      </div>
-
+      <!-- MAIN GALLERY -->
       <div class="row-fluid">
         <div class="span12">
           <section id="imagegallery1">
@@ -61,9 +80,9 @@
             <div class="row-fluid">
               <ul class="thumbnails da-thumbs gallery-grid">
 
+                <!-- Image 1 -->
                 <li class="span4">
-                  <a title="Abhinaya Guduru presenting a poster at 2025 Undergraduate Research & Creative Inquiry Showcase"
-                     href="images/abhinaya_poster.jpg" class="thumbnail">
+                  <a title="Abhinaya Guduru presenting a poster" href="images/abhinaya_poster.jpg" class="thumbnail">
                     <img alt="Abhinaya Guduru presenting poster" src="images/abhinaya_poster.jpg" />
                   </a>
                   <p class="caption">
@@ -72,90 +91,83 @@
                   </p>
                 </li>
 
+                <!-- Image 2 -->
                 <li class="span4">
-                  <a title="Abhinaya Guduru received the Distinguished Research Award at the 2025 UTSA Excellence in Sciences Awards"
-                     href="images/abhinaya_award_2.jpg" class="thumbnail">
+                  <a title="Abhinaya Guduru receiving award" href="images/abhinaya_award_2.jpg" class="thumbnail">
                     <img alt="Abhinaya Guduru receiving award" src="images/abhinaya_award_2.jpg" />
                   </a>
                   <p class="caption">
-                    Abhinaya Guduru receiving the Distinguished Research Award at the 2025 UTSA Excellence in Sciences Awards.
+                    Abhinaya Guduru receiving the Distinguished Research Award
+                    at the 2025 UTSA Excellence in Sciences Awards.
                   </p>
                 </li>
 
+                <!-- Image 3 -->
                 <li class="span4">
-                  <a title="Dr. Akter is presenting her research at CIFellow Workshop 2025."
-                     href="images/Taslima_CIFellow_presentation.jpg" class="thumbnail">
+                  <a title="Dr. Akter presenting research" href="images/Taslima_CIFellow_presentation.jpg" class="thumbnail">
                     <img alt="Dr. Taslima Akter presenting research" src="images/Taslima_CIFellow_presentation.jpg" />
                   </a>
                   <p class="caption">
-                    Dr. Akter is presenting her research on accessibility of collaborative tools at CIFellow Workshop 2025.
+                    Dr. Akter is presenting her research on accessibility of collaborative tools
+                    at CIFellow Workshop 2025.
                   </p>
                 </li>
 
               </ul>
             </div>
           </section>
-
         </div>
       </div>
     </div>
 
+    <!-- FOOTER -->
     <footer id="footer">
       <div class="container-fluid">
         <div class="row-fluid">
           <div class="span5">
             <h3>Contact Information</h3>
-            <p><b>Office Hours: </b>Monday-Friday (8.00am - 5.00pm)</p>
-            <p><b>Phone: </b>999-999-9999</p>
-            <p><b>Cell: </b>999-999-9999</p>
-            <a href="mailto:your.email@uni.edu">Email</a>
+            <p><b>Office Hours:</b> Monday–Friday (8.00am – 5.00pm)</p>
+            <p><b>Phone:</b> 999-999-9999</p>
+            <p><b>Email:</b> your.email@uni.edu</p>
           </div>
+
           <div class="span2">
-            <a href="#"><img src="thumbs/generic-logo.JPG" alt="research-lab-logo" /></a>
+            <a href="#"><img src="thumbs/generic-logo.JPG" alt="lab-logo" /></a>
           </div>
+
           <div class="span5">
             <h3>Address</h3>
             <p>
               9999 Generic Research Laboratory<br />
               999 Fake Street Avenue<br />
               City, State<br />
-              Country ZIP
+              ZIP Code
             </p>
-            <a href="http://maps.google.com/">Show Map</a>
+            <a href="#">Show Map</a>
           </div>
         </div>
       </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- JS -->
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/blueimp-gallery.min.js"></script>
 
-    <!-- FIXED SCRIPT -->
+    <!-- FIXED CLICK HANDLER -->
     <script>
-      (function () {
-        function setupGallery(id) {
-          var gallery = document.getElementById(id);
-          if (!gallery) return;
+      document.getElementById("imagegallery1").onclick = function (event) {
+        event = event || window.event;
+        var target = event.target || event.srcElement;
+        var link = target.closest("a");
+        if (!link) return;
 
-          gallery.onclick = function (event) {
-            event = event || window.event;
-            var target = event.target || event.srcElement;
-
-            var clickedLink = target.closest('a');
-            if (!clickedLink) return;
-
-            var links = gallery.getElementsByTagName('a');
-            var index = Array.prototype.indexOf.call(links, clickedLink);
-
-            blueimp.Gallery(links, { index: index });
-          };
-        }
-
-        setupGallery('imagegallery1');
-      })();
+        var links = this.getElementsByTagName("a");
+        blueimp.Gallery(links, {
+          index: link,
+          event: event
+        });
+      };
     </script>
-
   </body>
 </html>
