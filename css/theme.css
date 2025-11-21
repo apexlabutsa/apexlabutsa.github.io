@@ -616,3 +616,26 @@ header.jumbotron.subhead p.lead {
   position: relative;
   z-index: 2;
 }
+/* --- BlueImp Gallery Fix: Show Close button, hide Prev/Next --- */
+
+/* Close button visible */
+.blueimp-gallery .close {
+    display: block !important;
+    font-size: 40px !important;
+    color: white !important;
+    opacity: 1 !important;
+    z-index: 99999 !important;
+}
+
+/* Hide Prev/Next buttons completely */
+.blueimp-gallery .prev,
+.blueimp-gallery .next {
+    display: none !important;
+}
+
+/* Full gallery always above everything */
+.blueimp-gallery,
+.blueimp-gallery > .slides,
+.blueimp-gallery-controls {
+    z-index: 99999 !important;
+}
