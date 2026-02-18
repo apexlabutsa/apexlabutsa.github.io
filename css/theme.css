@@ -633,21 +633,3 @@ header.jumbotron.subhead p.lead {
     display: none !important;
 }
 
-/* ===== ABSOLUTE CAROUSEL FIX (NO CROP EVER) ===== */
-
-#main-carousel {
-    height: 450px !important;
-}
-
-#main-carousel .carousel-inner,
-#main-carousel .item {
-    height: 450px !important;
-}
-
-/* CRITICAL FIX */
-#main-carousel img {
-    width: 100% !important;
-    height: 450px !important;
-    object-fit: contain !important;   /* FULL IMAGE */
-    background-color: black;          /* empty space*/
-}
