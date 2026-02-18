@@ -174,3 +174,69 @@
 </script>
 </body>
 </html>
+
+ <!-- FOOTER -->
+<footer id="footer">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      
+      <!-- Contact Info -->
+      <div class="span5">
+        <h3>Contact Information</h3>
+
+        <p>
+          Taslima Akter<br />
+          Assistant Professor<br />
+          University of Texas at San Antonio
+        </p>
+
+        <p>
+          <b>Email:</b><br />
+          <a href="mailto:taslima.akter@utsa.edu">
+            taslima.akter@utsa.edu
+          </a>
+        </p>
+      </div>
+
+      <!-- Logo -->
+      <div class="span2">
+        <a href="#">
+          <img src="thumbs/generic-logo.JPG" alt="lab-logo" />
+        </a>
+      </div>
+
+      <!-- Affiliation -->
+      <div class="span5">
+        <h3>Affiliation</h3>
+
+        <p>
+          Computer Science<br />
+          College of AI, Cyber and Computing<br />
+          University of Texas at San Antonio
+        </p>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<!-- JS -->
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/blueimp-gallery.min.js"></script>
+
+<!-- FIXED CLICK HANDLER -->
+<script>
+  document.getElementById("imagegallery1").onclick = function (event) {
+    event = event || window.event;
+    var target = event.target || event.srcElement;
+    var link = target.closest("a");
+    if (!link) return;
+
+    var links = this.getElementsByTagName("a");
+    blueimp.Gallery(links, {
+      index: link,
+      event: event
+    });
+  };
+</script>
