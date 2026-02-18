@@ -633,3 +633,22 @@ header.jumbotron.subhead p.lead {
     display: none !important;
 }
 
+/* ===== PERFECT CAROUSEL IMAGE SCALING FIX ===== */
+
+#main-carousel {
+    height: 450px;
+}
+
+#main-carousel .carousel-inner,
+#main-carousel .item {
+    height: 450px;
+}
+
+/* CRITICAL FIX */
+#main-carousel .item img {
+    max-height: 100%;
+    width: auto;              /* stops stretching */
+    max-width: 100%;
+    margin: 0 auto;           /* center pic */
+    display: block;
+}
