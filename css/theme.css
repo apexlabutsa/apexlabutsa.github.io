@@ -639,3 +639,16 @@ header.jumbotron.subhead p.lead {
 .blueimp-gallery-controls {
     z-index: 99999 !important;
 }
+
+/* ===== CAROUSEL FIXED SIZE ===== */
+
+#main-carousel {
+    height: 450px;
+    overflow: hidden;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
