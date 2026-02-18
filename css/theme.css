@@ -633,18 +633,15 @@ header.jumbotron.subhead p.lead {
     display: none !important;
 }
 
-/* Full gallery always above everything */
-.blueimp-gallery,
-.blueimp-gallery > .slides,
-.blueimp-gallery-controls {
-    z-index: 99999 !important;
-}
-
-/* ===== CAROUSEL FIXED SIZE ===== */
+/* ===== BULLETPROOF CAROUSEL FIX ===== */
 
 #main-carousel {
     height: 450px;
-    overflow: hidden;
+}
+
+#main-carousel .carousel-inner,
+#main-carousel .item {
+    height: 450px;
 }
 
 .carousel-image {
