@@ -160,44 +160,61 @@
             </div>
          </div>
       </div>
-      <footer id="footer">
-         <div class="container-fluid">
-            <div class="row-fluid">
-               <div class="span5">
-                  <h3>Contact Information</h3>
-                  <p><b>Office Hours: </b>Monday-Friday (8.00am - 5.00pm)</p>
-                  <p><b>Phone: </b>999-999-9999</p>
-                  <p><b>Cell: </b>999-999-9999</p>
-                  <a href="mailto:your.email@uni.edu">Email</a>
-               </div>
-               <div class="span2">
-                  <a href="https://mybrandnewlogo.com/"><img src = "thumbs/generic-logo.JPG" alt="research-lab-logo"/></a>
-               </div>
-               <div class="span5">
-                  <h3>Address</h3>
-                  <p>9999 Generic Research Laboratory<br>
-                     999 Fake Street Avenue<br>
-                     City, State<br>
-                     Country ZIP
-                  </p>
-                  <a href="http://maps.google.com/">Show Map</a>
-               </div>
-            </div>
-         </div>
-      </footer>
+      <footer id="footer" role="contentinfo" class="site-footer">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      
+      <!-- Left: Contact Info -->
+      <div class="span5">
+       <h3>CONTACT INFORMATION</h3>
+      <p><strong>Taslima Akter</strong><br>
+      Assistant Professor<br>
+      University of Texas San Antonio<br>
+      Computer Science | College of AI, Cyber and Computing<br>
+  <p>
+    <a class="footer-link email-link" href="mailto:taslima.akter@utsa.edu">
+      Email: taslima.akter@utsa.edu
+    </a>
+  </p>
+</div>
 
-      <!-- Le javascript
-         ================================================== -->
-      <!-- Placed at the end of the document so the pages load faster -->
-      <script src="js/jquery-1.9.1.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script>
-         $(document).ready(function() {
-             $(document.body).scrollspy({
-                 target: "#navparent"
-             });
-         });
-         
-      </script>
-   </body>
+      <!-- Center: Logo -->
+      <div class="span2 text-center">
+        <a href="index.html" aria-label="APEX Lab">
+          <img class="footer-logo" src="thumbs/apexlab-logo.png"
+               alt="Accessibility and Privacy Enhancing EXperience (APEX) Lab logo">
+        </a>
+      </div>
+
+      <!-- Right: Address -->
+      <div class="span5">
+        <h3>ADDRESS</h3>
+        <p>
+          APEX Lab<br>
+          506 Dolorosa St<br>
+          San Antonio, Texas<br>
+          USA 78204
+        </p>
+        <a class="footer-btn" href="https://maps.app.goo.gl/StTmXfGu2sQjGXqVA">Show Map</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom copyright line -->
+  <div class="footer-bottom">
+    © <span id="year"></span> Accessibility and Privacy Enhancing EXperience (APEX) Lab •
+    University of Texas at San Antonio
+  </div>
+</footer>
+
+<!-- JS files -->
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const y = document.getElementById("year");
+    if (y) y.textContent = new Date().getFullYear();
+  });
+</script>
+</body>
 </html>
