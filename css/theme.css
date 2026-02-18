@@ -633,7 +633,7 @@ header.jumbotron.subhead p.lead {
     display: none !important;
 }
 
-/* ===== BULLETPROOF CAROUSEL FIX ===== */
+/* ===== CAROUSEL FIX – NO IMAGE CROP ===== */
 
 #main-carousel {
     height: 450px;
@@ -647,5 +647,6 @@ header.jumbotron.subhead p.lead {
 .carousel-image {
     width: 100%;
     height: 450px;
-    object-fit: cover;
+    object-fit: contain;     
+    background: black;       
 }
