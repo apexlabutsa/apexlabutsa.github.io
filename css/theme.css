@@ -651,56 +651,37 @@ header.jumbotron.subhead p.lead {
     object-fit: contain;
 }
 
-/* =========================================================
-   RESEARCH PAGE VISUAL POLISH (NO CONTENT CHANGE)
-   ========================================================= */
+/* ===== RESEARCH PAGE FIX ===== */
 
-/* Make text more readable */
-.span8.offset1 {
-    max-width: 760px;
-}
-
-/* Improve paragraph readability */
-.span8.offset1 p {
-    text-align: justify;
-    line-height: 1.65;
-    font-size: 14.5px;
-}
-
-/* Fix image sizing */
-.span8.offset1 img {
-    width: 320px;          /* controlled size */
-    height: auto;
-    border-radius: 6px;
-}
-
-/* Add breathing space between text & images */
-.float-right {
-    margin-left: 25px;
-    margin-bottom: 10px;
-}
-
-/* Section spacing */
-.span8.offset1 section {
+.research-block {
     margin-bottom: 35px;
 }
 
-/* Publications styling */
-.resources {
-    margin-top: 10px;
+.research-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
 }
 
-.resources li {
-    margin-bottom: 10px;
-    line-height: 1.5;
+.research-content img {
+    width: 260px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
 }
 
-/* Headings spacing */
-h3 {
-    margin-top: 10px;
-    margin-bottom: 15px;
+.research-content p {
+    flex: 1;
+    text-align: justify;
 }
 
-h4 {
-    margin-bottom: 8px;
+/* Mobile Responsive Fix */
+@media (max-width: 768px) {
+    .research-content {
+        flex-direction: column;
+    }
+
+    .research-content img {
+        width: 100%;
+    }
 }
