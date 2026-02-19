@@ -595,7 +595,7 @@ header.jumbotron.subhead {
 
   height: 260px;   /* banner height (adjustable) */
 
-  background: url("../images/cover-photo-logo.png") center center no-repeat;
+  background: url("../images/cover-logo.png") center center no-repeat;
   background-size: cover;
 
   padding: 0;
