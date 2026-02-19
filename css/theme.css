@@ -692,21 +692,26 @@ header.jumbotron.subhead p.lead {
 }
 
 /* =====================================
-   RESEARCH PAGE SIDEBAR FIX 
+   RESEARCH PAGE SIDEBAR
    ===================================== */
 
-/* ONLY Research Page */
+/* Sidebar spacing */
 .research-page .bs-docs-sidebar {
-    margin-bottom: 260px;
+    padding-bottom: 80px;   /* safe breathing space */
 }
 
+/* Affix behaviour */
 @media (min-width: 768px) {
 
     .research-page .bs-docs-sidenav.affix {
 
-        max-height: 75vh;
+        max-height: 70vh;
         overflow-y: auto;
 
-        bottom: 320px;   /* footer safe */
+        position: sticky;    /* KEY FIX */
+        top: 20px;
+
+        bottom: auto;        /* prevent footer collision */
     }
 }
+
