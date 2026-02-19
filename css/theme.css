@@ -716,58 +716,50 @@ header.jumbotron.subhead p.lead {
 }
 
 /* =====================================
-   MOBILE PERFECT FIX (SAFE)
+   MOBILE PERFECT FIX 
    ===================================== */
 
+/* Images No overflow */
 img {
     max-width: 100%;
     height: auto;
 }
 
+/* Header image responsive */
 .jumbotron img,
 header img {
     width: 100%;
     height: auto;
 }
 
+/* Float collapse prevent */
 header {
     overflow: hidden;
 }
 
-@media (max-width: 767px) {
-
-    .navbar .nav {
-        float: none;
-        text-align: center;
-    }
-
-    .navbar .nav li {
-        float: none;
-        display: inline-block;
-    }
-}
-
 /* =====================================
-   MOBILE NAVBAR HARD FIX
+   MOBILE NAVBAR PERFECT FIX
    ===================================== */
 
 @media (max-width: 767px) {
 
+    /* Menu vertical stack */
     .navbar .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        width: 100%;
+        display: block;
+        text-align: center;
+        float: none;
     }
 
     .navbar .nav li {
+        display: block;
         float: none;
-        flex: 1;
-        text-align: center;
+        width: 100%;
     }
 
     .navbar .nav li a {
-        padding: 10px 4px;
-        font-size: 13px;
+        display: block;
+        padding: 12px 0;
+        font-size: 14px;
+        line-height: 1.4;
     }
 }
