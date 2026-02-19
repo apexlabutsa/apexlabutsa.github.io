@@ -655,7 +655,7 @@ header.jumbotron.subhead p.lead {
    RESEARCH PAGE PERFECT FINAL FIX
    ===================================== */
 
-/* Section কে isolate করে (float bug fix) */
+/* Section -> isolate -> (float bug fix) */
 .research-block {
     overflow: hidden;
     clear: both;
