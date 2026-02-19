@@ -599,7 +599,7 @@ header.jumbotron.subhead::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../thumbs/cover_logo_1.png") no-repeat center;
+  background: url("../thumbs/cover-photo-logo.png") no-repeat center;
   background-size: 520px auto;
   opacity: 0.50;                  /* for stronger look */
   mix-blend-mode: screen;         /* makes logo more visible on dark background */
