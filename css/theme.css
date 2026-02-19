@@ -589,49 +589,44 @@ ul.sponsors { margin: 40px 0; }
     width: 100% !important;
   }
 }
-/* ===== CLEAN IMAGE-ONLY HEADER for Desktop ===== */
-
-header.jumbotron.subhead {
-
-  height: 260px;   /* banner height (adjustable) */
-
-  background: url("../images/cover-logo.png") center center no-repeat;
-  background-size: cover;
-
-  padding: 0;
-  margin: 0;
-}
-
-/* Hide ALL text inside header */
-header.jumbotron.subhead h1,
-header.jumbotron.subhead p,
-header.jumbotron.subhead .lead {
-  display: none;
-}
-
 /* =====================================
-   RESPONSIVE HEADER BANNER (MOBILE FIX)
+   IMAGE-ONLY HEADER BANNER Desktop
    ===================================== */
 
 /* Banner container */
 header.jumbotron.subhead {
+
+    height: 260px;   /* Banner height */
+
+    background-image: url("../images/cover-logo.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    background-size: cover;   /* Desktop সুন্দর crop */
+
     padding: 0;
     margin: 0;
 }
 
-/* Banner image */
-header.jumbotron.subhead img {
-    width: 100%;
-    height: 300px;          /* ← Desktop height */
-    object-fit: cover;      /* ← MAGIC LINE */
-    display: block;
+/* Hide ALL header text */
+header.jumbotron.subhead h1,
+header.jumbotron.subhead p,
+header.jumbotron.subhead .lead {
+    display: none;
 }
 
-/* Mobile specific fix */
+/* =====================================
+   MOBILE FIX → FULL IMAGE VISIBILITY
+   ===================================== */
+
 @media (max-width: 768px) {
 
-    header.jumbotron.subhead img {
-        height: 180px;      /* ← Mobile perfect height */
+    header.jumbotron.subhead {
+
+        height: auto;                 /* Critical */
+        background-size: contain;     /* FULL IMAGE */
+        background-position: center top;
+
     }
 
 }
