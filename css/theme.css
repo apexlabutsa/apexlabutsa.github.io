@@ -598,7 +598,8 @@ header.jumbotron.subhead {
     overflow: hidden;
 
     background: url("../images/cover-photo-logo.png") center center no-repeat;
-    background-size: cover;     /* fills nicely */
+    background-size: contain;
+    background-color: #000;   /* empty space black */
 }
 
 /* Dark overlay clear */
