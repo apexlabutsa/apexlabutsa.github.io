@@ -652,42 +652,34 @@ header.jumbotron.subhead p.lead {
 }
 
 /* =====================================
-   RESEARCH PAGE IMAGE ALIGNMENT FIX
-   Bootstrap 2 SAFE VERSION
+   RESEARCH PAGE PERFECT FINAL FIX
    ===================================== */
 
-/* Wrapper for research blocks */
-
+/* Section কে isolate করে (float bug fix) */
 .research-block {
-
-    overflow: hidden;          /* prevents collapse */
-    margin-bottom: 30px;
+    overflow: hidden;
+    clear: both;
+    margin-bottom: 40px;
 }
 
-/* Image styling */
-
+/* Image behaviour */
 .research-block img {
 
-    width: 260px;
+    width: 260px;          /* fixed clean size */
+    max-width: 40%;        /* responsive balance */
+
     height: auto;
+    max-height: 260px;     /* prevents giant images */
 
     float: right;
-    margin-left: 20px;
+
+    margin-left: 25px;
     margin-bottom: 10px;
 
     border-radius: 4px;
 }
 
-/* Prevent oversized images */
-
-.research-block img {
-
-    max-height: 320px;         /* MAGIC safety cap */
-    object-fit: contain;
-}
-
-/* Clean text flow */
-
+/*  ALL TEXT JUSTIFY  */
 .research-block p {
     text-align: justify;
 }
