@@ -651,9 +651,53 @@ header.jumbotron.subhead p.lead {
     object-fit: contain;
 }
 
-/* ===== Research Page Overlap Issue Solve ===== */
-section::after {
-    content: "";
-    display: block;
-    clear: both;
+/* ===== Research Page Layout Polish ===== */
+
+/* Research section images */
+#ai img,
+#collab_tech img,
+#misc img {
+    width: 320px;          /* smaller images */
+    height: auto;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    border-radius: 6px;
 }
+
+/* Text breathing space */
+#ai p,
+#collab_tech p,
+#misc p {
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* Section spacing */
+#ai section,
+#collab_tech section,
+#misc section {
+    margin-bottom: 35px;
+}
+
+/* Publications block */
+.resources {
+    margin-top: 10px;
+    margin-left: 0;
+}
+
+/* Publications ALWAYS below text */
+.resources li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Fix awkward image dominance */
+.float-right {
+    max-width: 320px;
+}
+
+/* Better visual balance */
+h4 {
+    margin-bottom: 8px;
+}
+
