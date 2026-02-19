@@ -589,36 +589,32 @@ ul.sponsors { margin: 40px 0; }
     width: 100% !important;
   }
 }
-/* ===== HEADER BACKGROUND IMAGE ===== */
+/* =====================================
+   HEADER BACKGROUND PERFECT FIT
+   ===================================== */
 
 header.jumbotron.subhead {
+    position: relative;
+    overflow: hidden;
 
     background: url("../images/cover-photo-logo.png") center center no-repeat;
-
-    background-size: cover;
-    
-    color: white;
-
-    position: relative;
+    background-size: cover;     /* fills nicely */
 }
 
-/* Dark overlay */
-
+/* Dark overlay clear */
 header.jumbotron.subhead::before {
     content: "";
     position: absolute;
     inset: 0;
 
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 0.35);   /* darkness layer */
 
     z-index: 1;
 }
 
-/* Text fix */
-
+/* Text always above */
 header.jumbotron.subhead h1,
 header.jumbotron.subhead p.lead {
-
     position: relative;
     z-index: 2;
 }
