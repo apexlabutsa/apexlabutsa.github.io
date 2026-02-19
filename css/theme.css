@@ -651,66 +651,43 @@ header.jumbotron.subhead p.lead {
     object-fit: contain;
 }
 
-/* =========================================
-   RESEARCH PAGE PERFECT IMAGE ALIGNMENT
-   ========================================= */
+/* =====================================
+   RESEARCH PAGE IMAGE ALIGNMENT FIX
+   Bootstrap 2 SAFE VERSION
+   ===================================== */
 
-.span12 section img.float-right {
-    
-    width: 260px;          /* consistent image width */
+/* Wrapper for research blocks */
+
+.research-block {
+
+    overflow: hidden;          /* prevents collapse */
+    margin-bottom: 30px;
+}
+
+/* Image styling */
+
+.research-block img {
+
+    width: 260px;
     height: auto;
-    
-    float: none !important;   /* disable old float */
-    
-    display: block;
-    
-    margin: 0;             /* remove weird spacing */
-}
 
-/* FLEX LAYOUT FOR EACH RESEARCH SECTION */
-
-.span12 section {
-
-    display: flex;
-    align-items: stretch;      /* MAGIC LINE  */
-
-    gap: 20px;
-}
-
-/* TEXT AREA */
-
-.span12 section p {
-
-    flex: 1;
-    text-align: justify;
-}
-
-/* IMAGE BEHAVIOR */
-
-.span12 section img {
-
-    object-fit: contain;       /* NEVER crop */
-    align-self: stretch;       /* MATCH TEXT HEIGHT */
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 10px;
 
     border-radius: 4px;
 }
 
-/* Fix spacing between title & content */
+/* Prevent oversized images */
 
-.span12 section h4 {
-    width: 100%;
+.research-block img {
+
+    max-height: 320px;         /* MAGIC safety cap */
+    object-fit: contain;
 }
 
-/* MOBILE FIX */
+/* Clean text flow */
 
-@media (max-width: 768px) {
-
-    .span12 section {
-        flex-direction: column;
-    }
-
-    .span12 section img {
-        width: 100%;
-        align-self: center;
-    }
+.research-block p {
+    text-align: justify;
 }
