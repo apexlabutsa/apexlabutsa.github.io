@@ -589,33 +589,40 @@ ul.sponsors { margin: 40px 0; }
     width: 100% !important;
   }
 }
-/* ===== Header watermark logo stronger visibility ===== */
+/* ===== HEADER BACKGROUND IMAGE ===== */
+
 header.jumbotron.subhead {
-  position: relative;
-  overflow: hidden;
+
+    background: url("../images/cover-photo-logo.png") center center no-repeat;
+
+    background-size: cover;
+    
+    color: white;
+
+    position: relative;
 }
+
+/* Dark overlay */
 
 header.jumbotron.subhead::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("../cover-photo-logo.png") no-repeat center;
-  background-size: 520px auto;
-  opacity: 0.50;                  /* for stronger look */
-  mix-blend-mode: screen;         /* makes logo more visible on dark background */
-  z-index: 1;
-  pointer-events: none;
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    z-index: 1;
 }
 
-header.jumbotron.subhead::after {
-  z-index: 0 !important;
-}
+/* Text fix */
 
 header.jumbotron.subhead h1,
 header.jumbotron.subhead p.lead {
-  position: relative;
-  z-index: 2;
+
+    position: relative;
+    z-index: 2;
 }
+
 /* --- BlueImp Gallery Fix: Show Close button, hide Prev/Next --- */
 
 /* Close button visible */
