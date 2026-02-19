@@ -692,20 +692,21 @@ header.jumbotron.subhead p.lead {
 }
 
 /* =====================================
-   RESEARCH PAGE PERFECT - Sidebar Overlap
+   RESEARCH PAGE SIDEBAR FIX 
    ===================================== */
 
-/* Sidebar bottom safety (FIXED) */
-.bs-docs-sidebar {
-    margin-bottom: 260px;   /* ← increased (no footer overlap) */
+/* ONLY Research Page */
+.research-page .bs-docs-sidebar {
+    margin-bottom: 260px;
 }
 
-/* Prevent sidebar overlap with footer */
 @media (min-width: 768px) {
 
-    .bs-docs-sidenav.affix {
+    .research-page .bs-docs-sidenav.affix {
+
         max-height: 75vh;
         overflow-y: auto;
-        bottom: 320px;      /* ← footer protection */
+
+        bottom: 320px;   /* footer safe */
     }
 }
