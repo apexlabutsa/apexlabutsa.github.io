@@ -651,37 +651,66 @@ header.jumbotron.subhead p.lead {
     object-fit: contain;
 }
 
-/* ===== RESEARCH PAGE FIX ===== */
+/* =========================================
+   RESEARCH PAGE PERFECT IMAGE ALIGNMENT
+   ========================================= */
 
-.research-block {
-    margin-bottom: 35px;
+.span12 section img.float-right {
+    
+    width: 260px;          /* consistent image width */
+    height: auto;
+    
+    float: none !important;   /* disable old float */
+    
+    display: block;
+    
+    margin: 0;             /* remove weird spacing */
 }
 
-.research-content {
+/* FLEX LAYOUT FOR EACH RESEARCH SECTION */
+
+.span12 section {
+
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;      /* MAGIC LINE  */
+
     gap: 20px;
 }
 
-.research-content img {
-    width: 260px;
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-}
+/* TEXT AREA */
 
-.research-content p {
+.span12 section p {
+
     flex: 1;
     text-align: justify;
 }
 
-/* Mobile Responsive Fix */
+/* IMAGE BEHAVIOR */
+
+.span12 section img {
+
+    object-fit: contain;       /* NEVER crop */
+    align-self: stretch;       /* MATCH TEXT HEIGHT */
+
+    border-radius: 4px;
+}
+
+/* Fix spacing between title & content */
+
+.span12 section h4 {
+    width: 100%;
+}
+
+/* MOBILE FIX */
+
 @media (max-width: 768px) {
-    .research-content {
+
+    .span12 section {
         flex-direction: column;
     }
 
-    .research-content img {
+    .span12 section img {
         width: 100%;
+        align-self: center;
     }
 }
