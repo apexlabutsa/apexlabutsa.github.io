@@ -652,10 +652,10 @@ header.jumbotron.subhead p.lead {
 }
 
 /* =====================================
-   RESEARCH PAGE PERFECT FINAL FIX
+   RESEARCH PAGE Picture and Text Alignment
    ===================================== */
 
-/* Section -> isolate -> (float bug fix) */
+/* Each research section = isolated */
 .research-block {
     overflow: hidden;
     clear: both;
@@ -665,11 +665,11 @@ header.jumbotron.subhead p.lead {
 /* Image behaviour */
 .research-block img {
 
-    width: 260px;          /* fixed clean size */
-    max-width: 40%;        /* responsive balance */
+    width: 260px;
+    max-width: 40%;
 
     height: auto;
-    max-height: 260px;     /* prevents giant images */
+    max-height: 260px;
 
     float: right;
 
@@ -679,7 +679,31 @@ header.jumbotron.subhead p.lead {
     border-radius: 4px;
 }
 
-/*  ALL TEXT JUSTIFY  */
+/* Text justify */
 .research-block p {
     text-align: justify;
+}
+
+/* CRITICAL FIX — prevents image drop */
+.research-block::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* =====================================
+   RESEARCH PAGE PERFECT - Sidebar Overlap
+   ===================================== */
+
+/* Sidebar bottom safety */
+.bs-docs-sidebar {
+    margin-bottom: 120px;
+}
+
+/* Prevent sidebar overlap with footer */
+@media (min-width: 768px) {
+    .bs-docs-sidenav.affix {
+        max-height: 75vh;
+        overflow-y: auto;
+    }
 }
