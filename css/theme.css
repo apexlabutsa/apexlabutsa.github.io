@@ -589,24 +589,27 @@ ul.sponsors { margin: 40px 0; }
     width: 100% !important;
   }
 }
-/* ===== CLEAN IMAGE-ONLY HEADER ===== */
+/* =====================================
+   FULL WIDTH HEADER BANNER FIX
+   ===================================== */
 
 header.jumbotron.subhead {
-
-  height: 260px;   /* banner height (adjustable) */
-
-  background: url("../images/cover-logo.png") center center no-repeat;
-  background-size: cover;
-
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
+    width: 100vw;              /* পুরো screen width */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;        /* center থেকে full stretch */
+    margin-right: -50vw;
+    border-radius: 0;
 }
 
-/* Hide ALL text inside header */
-header.jumbotron.subhead h1,
-header.jumbotron.subhead p,
-header.jumbotron.subhead .lead {
-  display: none;
+/* Banner image behaviour */
+header.jumbotron.subhead img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* --- BlueImp Gallery Fix: Show Close button, hide Prev/Next --- */
