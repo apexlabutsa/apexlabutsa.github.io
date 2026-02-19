@@ -651,53 +651,56 @@ header.jumbotron.subhead p.lead {
     object-fit: contain;
 }
 
-/* ===== Research Page Layout Polish ===== */
+/* =========================================================
+   RESEARCH PAGE VISUAL POLISH (NO CONTENT CHANGE)
+   ========================================================= */
 
-/* Research section images */
-#ai img,
-#collab_tech img,
-#misc img {
-    width: 320px;          /* smaller images */
+/* Make text more readable */
+.span8.offset1 {
+    max-width: 760px;
+}
+
+/* Improve paragraph readability */
+.span8.offset1 p {
+    text-align: justify;
+    line-height: 1.65;
+    font-size: 14.5px;
+}
+
+/* Fix image sizing */
+.span8.offset1 img {
+    width: 320px;          /* controlled size */
     height: auto;
-    margin-left: 25px;
-    margin-bottom: 10px;
     border-radius: 6px;
 }
 
-/* Text breathing space */
-#ai p,
-#collab_tech p,
-#misc p {
-    line-height: 1.7;
-    text-align: justify;
+/* Add breathing space between text & images */
+.float-right {
+    margin-left: 25px;
+    margin-bottom: 10px;
 }
 
 /* Section spacing */
-#ai section,
-#collab_tech section,
-#misc section {
+.span8.offset1 section {
     margin-bottom: 35px;
 }
 
-/* Publications block */
+/* Publications styling */
 .resources {
     margin-top: 10px;
-    margin-left: 0;
 }
 
-/* Publications ALWAYS below text */
 .resources li {
     margin-bottom: 10px;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
-/* Fix awkward image dominance */
-.float-right {
-    max-width: 320px;
+/* Headings spacing */
+h3 {
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
-/* Better visual balance */
 h4 {
     margin-bottom: 8px;
 }
-
