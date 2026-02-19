@@ -636,16 +636,11 @@ header.jumbotron.subhead p.lead {
 /* ===== CAROUSEL FIXED HERO BANNER ===== */
 
 #main-carousel {
-    height: 500px;    
-}
-
-#main-carousel .carousel-inner,
-#main-carousel .item {
-    height: 500px;
+    max-height: 450px;
 }
 
 #main-carousel .item img {
     width: 100%;
-    height: 500px;
+    max-height: 450px;
     object-fit: cover;
 }
