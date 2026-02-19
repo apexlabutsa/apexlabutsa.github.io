@@ -684,7 +684,7 @@ header.jumbotron.subhead p.lead {
     text-align: justify;
 }
 
-/* CRITICAL FIX — prevents image drop */
+/* CRITICAL FIX — prevents float collapse */
 .research-block::after {
     content: "";
     display: block;
@@ -695,15 +695,17 @@ header.jumbotron.subhead p.lead {
    RESEARCH PAGE PERFECT - Sidebar Overlap
    ===================================== */
 
-/* Sidebar bottom safety */
+/* Sidebar bottom safety (FIXED) */
 .bs-docs-sidebar {
-    margin-bottom: 120px;
+    margin-bottom: 260px;   /* ← increased (no footer overlap) */
 }
 
 /* Prevent sidebar overlap with footer */
 @media (min-width: 768px) {
+
     .bs-docs-sidenav.affix {
         max-height: 75vh;
         overflow-y: auto;
+        bottom: 320px;      /* ← footer protection */
     }
 }
