@@ -589,44 +589,35 @@ ul.sponsors { margin: 40px 0; }
     width: 100% !important;
   }
 }
-/* =====================================
-   IMAGE-ONLY HEADER BANNER Desktop
-   ===================================== */
+/* ===== IMAGE ONLY HEADER ===== */
 
-/* Banner container */
 header.jumbotron.subhead {
 
-    height: 260px;   /* Banner height */
+    height: 260px;
+    min-height: 180px;
 
     background-image: url("../images/cover-logo.png");
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
-
-    background-size: cover;   /* Desktop সুন্দর crop */
+    background-size: cover;
 
     padding: 0;
     margin: 0;
 }
 
-/* Hide ALL header text */
+/* Hide header text */
 header.jumbotron.subhead h1,
 header.jumbotron.subhead p,
 header.jumbotron.subhead .lead {
     display: none;
 }
 
-/* =====================================
-   MOBILE FIX → FULL IMAGE VISIBILITY
-   ===================================== */
-
+/* MOBILE FIX */
 @media (max-width: 768px) {
 
     header.jumbotron.subhead {
-
-        height: auto;                 /* Critical */
-        background-size: contain;     /* FULL IMAGE */
-        background-position: center top;
-
+        height: 180px;
+        background-size: cover;
     }
 
 }
