@@ -589,7 +589,7 @@ ul.sponsors { margin: 40px 0; }
     width: 100% !important;
   }
 }
-/* ===== CLEAN IMAGE-ONLY HEADER ===== */
+/* ===== CLEAN IMAGE-ONLY HEADER for Desktop ===== */
 
 header.jumbotron.subhead {
 
@@ -607,6 +607,33 @@ header.jumbotron.subhead h1,
 header.jumbotron.subhead p,
 header.jumbotron.subhead .lead {
   display: none;
+}
+
+/* =====================================
+   RESPONSIVE HEADER BANNER (MOBILE FIX)
+   ===================================== */
+
+/* Banner container */
+header.jumbotron.subhead {
+    padding: 0;
+    margin: 0;
+}
+
+/* Banner image */
+header.jumbotron.subhead img {
+    width: 100%;
+    height: 300px;          /* ← Desktop height */
+    object-fit: cover;      /* ← MAGIC LINE */
+    display: block;
+}
+
+/* Mobile specific fix */
+@media (max-width: 768px) {
+
+    header.jumbotron.subhead img {
+        height: 180px;      /* ← Mobile perfect height */
+    }
+
 }
 
 /* --- BlueImp Gallery Fix: Show Close button, hide Prev/Next --- */
