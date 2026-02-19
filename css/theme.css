@@ -651,4 +651,9 @@ header.jumbotron.subhead p.lead {
     object-fit: contain;
 }
 
-
+/* ===== Research Page Overlap Issue Solve ===== */
+section::after {
+    content: "";
+    display: block;
+    clear: both;
+}
