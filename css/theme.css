@@ -598,10 +598,8 @@ header.jumbotron.subhead {
     background-image: url("../images/cover-logo.png");
     background-repeat: no-repeat;
 
-    background-size: contain;     /* NO CROPPING */
-    background-position: center;  /* Center perfectly */
-
-    background-color: black;      /* fills empty space */
+    background-size: cover;          /* FULL WIDTH */
+    background-position: center center;
 
     padding: 0;
     margin: 0;
