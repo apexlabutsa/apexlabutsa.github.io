@@ -589,38 +589,44 @@ ul.sponsors { margin: 40px 0; }
     width: 100% !important;
   }
 }
-/* ===== FULL WIDTH HEADER BANNER ===== */
+/* =====================================
+   IMAGE ONLY HEADER (DESKTOP PERFECT)
+   ===================================== */
 
 header.jumbotron.subhead {
 
-    height: 260px;              /* banner height */
-    min-height: 180px;
+    height: 180px;          
+    min-height: 150px;
 
-    background-image: url("../images/cover-logo-5.png");
-
+    background-image: url("../images/cover-logo.png");
     background-position: center center;
     background-repeat: no-repeat;
-
-    background-size: cover;     /* fills entire header */
+    background-size: cover; 
 
     padding: 0;
     margin: 0;
 }
 
-/* Hide header text */
+/* Hide ALL header text */
 header.jumbotron.subhead h1,
 header.jumbotron.subhead p,
 header.jumbotron.subhead .lead {
     display: none;
 }
 
-/* ===== MOBILE ===== */
+
+/* =====================================
+   MOBILE PERFECT VIEW
+   ===================================== */
 
 @media (max-width: 768px) {
 
     header.jumbotron.subhead {
-        height: 200px;          /* smaller */
-        background-size: cover;
+
+        height: 160px;         
+        background-size: cover; 
+        background-position: center;
+
     }
 
 }
