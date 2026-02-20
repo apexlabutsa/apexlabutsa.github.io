@@ -718,26 +718,12 @@ header.jumbotron.subhead .lead {
 
         max-height: 70vh;
         overflow-y: auto;
+
+        position: sticky;    /* KEY FIX */
         top: 20px;
+
+        bottom: auto;        /* prevent footer collision */
     }
-}
-/* =====================================
-   RESEARCH SIDEBAR PERFECT FIX
-   ===================================== */
-
-.bs-docs-sidebar {
-    position: relative;
-    margin-bottom: 320px;   /* Footer safety */
-}
-
-.bs-docs-sidenav.affix {
-    top: 20px;
-}
-
-.bs-docs-sidenav.affix-bottom {
-    position: absolute;
-    top: auto;
-    bottom: 320px;
 }
 
 /* =====================================
