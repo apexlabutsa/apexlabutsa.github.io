@@ -590,6 +590,7 @@ ul.sponsors { margin: 40px 0; }
   }
 }
 /* ===== IMAGE ONLY HEADER (DESKTOP FIX) ===== */
+
 header.jumbotron.subhead {
 
     height: 260px;
@@ -597,9 +598,10 @@ header.jumbotron.subhead {
     background-image: url("../images/cover-logo.png");
     background-repeat: no-repeat;
 
-    background-size: cover;
+    background-size: contain;     /* NO CROPPING */
+    background-position: center;  /* Center perfectly */
 
-    background-position: center top;   /* DESKTOP FIX */
+    background-color: black;      /* fills empty space */
 
     padding: 0;
     margin: 0;
