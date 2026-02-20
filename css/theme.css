@@ -590,24 +590,23 @@ ul.sponsors { margin: 40px 0; }
   }
 }
 /* =====================================
-   IMAGE ONLY HEADER (DESKTOP PERFECT)
+   IMAGE ONLY HEADER (FINAL FIX)
    ===================================== */
 
 header.jumbotron.subhead {
 
-    height: 180px;          
-    min-height: 150px;
-
+    height: 200px;     
+    
     background-image: url("../images/cover-logo-4.png");
-    background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-position: center top;   /* ← KEY CHANGE */
+    background-size: cover;
 
     padding: 0;
     margin: 0;
 }
 
-/* Hide ALL header text */
+/* Hide header text */
 header.jumbotron.subhead h1,
 header.jumbotron.subhead p,
 header.jumbotron.subhead .lead {
@@ -616,17 +615,14 @@ header.jumbotron.subhead .lead {
 
 
 /* =====================================
-   MOBILE HEADER PERFECT VIEW
+   MOBILE
    ===================================== */
 
 @media (max-width: 768px) {
 
     header.jumbotron.subhead {
-
-        height: 160px;         
-        background-size: cover; 
+        height: 170px;
         background-position: center;
-
     }
 
 }
