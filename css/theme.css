@@ -589,17 +589,19 @@ ul.sponsors { margin: 40px 0; }
     width: 100% !important;
   }
 }
-/* ===== IMAGE ONLY HEADER (DESKTOP FIX) ===== */
+/* ===== FULL WIDTH HEADER BANNER ===== */
 
 header.jumbotron.subhead {
 
-    height: 260px;
+    height: 260px;              /* banner height */
+    min-height: 180px;
 
-    background-image: url("../images/cover-logo.png");
+    background-image: url("../images/cover-logo-5.png");
+
+    background-position: center center;
     background-repeat: no-repeat;
 
-    background-size: cover;          /* FULL WIDTH */
-    background-position: center center;
+    background-size: cover;     /* fills entire header */
 
     padding: 0;
     margin: 0;
@@ -612,16 +614,13 @@ header.jumbotron.subhead .lead {
     display: none;
 }
 
-/* MOBILE SMART CROP */
+/* ===== MOBILE ===== */
+
 @media (max-width: 768px) {
 
     header.jumbotron.subhead {
-
-        height: 200px;
-
+        height: 200px;          /* smaller */
         background-size: cover;
-        background-position: center top;  /* ← MAGIC LINE */
-
     }
 
 }
