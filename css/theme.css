@@ -792,16 +792,23 @@ header {
 }
 
 /* =====================================
-   MASTER OVERLAP FIX (FINAL)
+   TRUE PAGE LAYOUT FIX
    ===================================== */
 
-/* Main content container height protect */
-.research-page .container {
-    overflow: hidden;
+html, body {
+    height: 100%;
 }
 
-/* Prevent footer from climbing up */
+.research-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.research-page .container {
+    flex: 1;
+}
+
 #footer {
-    clear: both;
-    position: relative;
+    margin-top: 0;
 }
