@@ -733,9 +733,9 @@ header.jumbotron.subhead .lead {
 /* Sidebar -> scrollable */
 @media (min-width: 768px) {
     .research-page .bs-docs-sidenav {
-        max-height: 75vh;
-        overflow-y: auto;
-    }
+    max-height: none;
+    overflow: visible;
+  }
 }
 
 /* =====================================
@@ -789,4 +789,19 @@ header {
 /* ===== CRITICAL RESEARCH PAGE FIX ===== */
 .research-page {
     overflow-x: hidden;
+}
+
+/* =====================================
+   MASTER OVERLAP FIX (FINAL)
+   ===================================== */
+
+/* Main content container height protect */
+.research-page .container {
+    overflow: hidden;
+}
+
+/* Prevent footer from climbing up */
+#footer {
+    clear: both;
+    position: relative;
 }
