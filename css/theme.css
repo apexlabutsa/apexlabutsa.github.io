@@ -795,5 +795,5 @@ header {
 }
 /* ===== CRITICAL RESEARCH PAGE FIX ===== */
 .research-page {
-    overflow: hidden;
+    overflow-x: hidden;
 }
