@@ -726,7 +726,7 @@ header.jumbotron.subhead .lead {
 /* Sidebar spacing */
 .research-page .bs-docs-sidebar {
     padding-bottom: 80px;   /* safe breathing space */
-
+}
 /* Affix behaviour */
 @media (min-width: 768px) {
 
