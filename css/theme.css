@@ -99,11 +99,12 @@ body > .navbar .brand:hover {
 .bs-docs-sidenav > li > a:hover { background-color: #f5f5f5; }
 .bs-docs-sidenav a:hover .icon-chevron-right { opacity: .5; }
 .bs-docs-sidenav.affix { top: 10px; }
-.bs-docs-sidenav.affix-bottom {
+
+/* ==========.bs-docs-sidenav.affix-bottom {
   position: absolute;
   top: auto;
   bottom: 270px;
-}
+}========== */
 
 /* ========== Responsive helpers ========== */
 .affix { top: 0px; }
@@ -714,15 +715,19 @@ header.jumbotron.subhead .lead {
 /* Affix behaviour */
 @media (min-width: 768px) {
 
-    .research-page .bs-docs-sidenav.affix {
+    .research-page .bs-docs-sidebar {
 
-        max-height: 70vh;
+        position: sticky;
+        top: 20px;
+        height: fit-content;
+
+    }
+
+    .research-page .bs-docs-sidenav {
+
+        max-height: 75vh;
         overflow-y: auto;
 
-        position: sticky;    /* KEY FIX */
-        top: 20px;
-
-        bottom: auto;        /* prevent footer collision */
     }
 }
 
