@@ -812,3 +812,15 @@ html, body {
 #footer {
     margin-top: 0;
 }
+
+/* =====================================
+   PUBLICATIONS PAGE LAYOUT FIX 
+   ===================================== */
+
+.publications-page #footer {
+    margin-top: 30px !important;
+}
+
+.publications-page .container > hr {
+    margin: 10px 0 !important;
+}
