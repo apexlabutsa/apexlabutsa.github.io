@@ -712,6 +712,9 @@ header.jumbotron.subhead .lead {
 .research-page .bs-docs-sidebar {
     padding-bottom: 80px;   /* safe breathing space */
 }
+.research-page .row-fluid {
+    overflow: visible !important;
+}
 
 /* Affix behaviour */
 @media (min-width: 768px) {
