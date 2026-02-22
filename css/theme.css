@@ -793,3 +793,7 @@ header {
         line-height: 1.4;
     }
 }
+/* ===== CRITICAL RESEARCH PAGE FIX ===== */
+.research-page {
+    overflow: hidden;
+}
