@@ -303,6 +303,27 @@ ul.sponsors { margin: 40px 0; }
 }
 
 /* =========================================================
+   Section Divider (Conference / Workshop Headings)
+   ========================================================= */
+.section-divider {
+    margin: 50px 0 25px 0;
+    text-align: center;
+    position: relative;
+}
+
+.section-divider::before,
+.section-divider::after {
+    content: "";
+    display: block;
+    border-top: 1px solid #ccc;
+    margin: 12px 0;
+}
+
+.section-divider h3 {
+    margin: 0;
+}
+
+/* =========================================================
    GALLERY: Bootstrap 3-per-row + Equal Height Thumbnails
    ========================================================= */
 
