@@ -244,18 +244,21 @@
 </footer>
 
 <!-- JS files -->
+<!-- JS FILES (CRITICAL) -->
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
+<!-- SCRIPT -->
 <script>
-$(document).ready(function () {
+window.onload = function() {
 
+  /* YEAR FIX */
+  document.getElementById("year").innerHTML = new Date().getFullYear();
+
+  /* CAROUSEL FIX */
   $('#main-carousel').carousel({
     interval: 3000
   });
 
-  const y = document.getElementById("year");
-  if (y) {
-    y.textContent = new Date().getFullYear();
-  }
-
-});
+};
 </script>
