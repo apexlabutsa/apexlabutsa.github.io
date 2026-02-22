@@ -200,13 +200,12 @@
       <footer id="footer" role="contentinfo" class="site-footer">
   <div class="container-fluid">
     <div class="row-fluid">
-      
-      <!-- Left: Contact Info -->
+
       <div class="span5">
        <h3>CONTACT INFORMATION</h3>
       <p><strong>Dr. Taslima Akter</strong><br>
       Assistant Professor<br>
-      University of Texas at San Antonio<br>
+      University of Texas San at Antonio<br>
       Computer Science | College of AI, Cyber and Computing<br>
   <p>
     <a class="footer-link email-link" href="mailto:taslima.akter@utsa.edu">
@@ -248,10 +247,12 @@
 <script src="js/jquery-1.9.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const y = document.getElementById("year");
-    if (y) y.textContent = new Date().getFullYear();
+$(document).ready(function () {
+  $('#main-carousel').carousel({
+    interval: 3000
   });
+});
 </script>
+
 </body>
 </html>
