@@ -115,11 +115,11 @@ body > .navbar .brand:hover {
 .bs-docs-sidenav a:hover .icon-chevron-right { opacity: .5; }
 .bs-docs-sidenav.affix { top: 10px; }
 
-/* ==========.bs-docs-sidenav.affix-bottom {
+.bs-docs-sidenav.affix-bottom {
   position: absolute;
   top: auto;
   bottom: 270px;
-}========== */
+}
 
 /* ========== Responsive helpers ========== */
 .affix { top: 0px; }
@@ -494,7 +494,7 @@ ul.sponsors { margin: 40px 0; }
 #footer .span5 {
   text-align: center;
 }
-#footer .row-fluid {
+#footer .container-fluid > .row-fluid {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -729,20 +729,14 @@ header.jumbotron.subhead .lead {
 }
 /* Affix behaviour */
 @media (min-width: 768px) {
-
-    .research-page .bs-docs-sidebar {
-    position: sticky;
-    top: 20px;
-    height: fit-content;
-    z-index: 5;
+  .research-page .bs-docs-sidenav {
+    max-height: 75vh;
+    overflow-y: auto;
+  }
 }
 
-    .research-page .bs-docs-sidenav {
-
-        max-height: 75vh;
-        overflow-y: auto;
-
-    }
+.research-page .bs-docs-sidebar{
+  position: relative;
 }
 
 /* =====================================
