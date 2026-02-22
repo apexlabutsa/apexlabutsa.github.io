@@ -251,7 +251,8 @@ ul.sponsors { margin: 40px 0; }
 
 /* ========== Footer ========== */
 #footer {
-  z-index: 10;
+  position: relative;
+  z-index: 1;  
   margin-top: 50px;
   margin-bottom: 0;
   padding-bottom: 25px;
@@ -716,12 +717,11 @@ header.jumbotron.subhead .lead {
 @media (min-width: 768px) {
 
     .research-page .bs-docs-sidebar {
-
-        position: sticky;
-        top: 20px;
-        height: fit-content;
-
-    }
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+    z-index: 5;
+}
 
     .research-page .bs-docs-sidenav {
 
