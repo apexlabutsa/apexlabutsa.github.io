@@ -1,3 +1,18 @@
+/* =====================================
+   GLOBAL FLOAT CLEAR FIX (CRITICAL)
+   ===================================== */
+
+.row-fluid::before,
+.row-fluid::after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.row-fluid::after {
+    clear: both;
+}
+
 /* ========== Base spacing ========== */
 body {
   padding-top: 15px;
@@ -711,10 +726,6 @@ header.jumbotron.subhead .lead {
 /* Sidebar spacing */
 .research-page .bs-docs-sidebar {
     padding-bottom: 80px;   /* safe breathing space */
-}
-.research-page .row-fluid {
-    overflow: visible !important;
-}
 
 /* Affix behaviour */
 @media (min-width: 768px) {
