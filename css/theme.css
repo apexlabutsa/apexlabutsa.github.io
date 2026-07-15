@@ -1,3 +1,18 @@
+/* =====================================
+   GLOBAL FLOAT CLEAR FIX (CRITICAL)
+   ===================================== */
+
+.row-fluid::before,
+.row-fluid::after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.row-fluid::after {
+    clear: both;
+}
+
 /* ========== Base spacing ========== */
 body {
   padding-top: 15px;
@@ -104,6 +119,7 @@ body > .navbar .brand:hover {
 .bs-docs-sidenav > li > a:hover { background-color: #f5f5f5; }
 .bs-docs-sidenav a:hover .icon-chevron-right { opacity: .5; }
 .bs-docs-sidenav.affix { top: 10px; }
+
 .bs-docs-sidenav.affix-bottom {
   position: absolute;
   top: auto;
@@ -255,7 +271,8 @@ ul.sponsors { margin: 40px 0; }
 
 /* ========== Footer ========== */
 #footer {
-  z-index: 10;
+  position: relative;
+  z-index: 1;  
   margin-top: 50px;
   margin-bottom: 0;
   padding-bottom: 25px;
@@ -288,6 +305,27 @@ ul.sponsors { margin: 40px 0; }
 .publication {
   text-align: justify;
   line-height: 1.6;
+}
+
+/* =========================================================
+   Section Divider (Conference / Workshop Headings)
+   ========================================================= */
+.section-divider {
+    margin: 50px 0 25px 0;
+    text-align: center;
+    position: relative;
+}
+
+.section-divider::before,
+.section-divider::after {
+    content: "";
+    display: block;
+    border-top: 1px solid #ccc;
+    margin: 12px 0;
+}
+
+.section-divider h3 {
+    margin: 0;
 }
 
 /* =========================================================
@@ -482,7 +520,7 @@ ul.sponsors { margin: 40px 0; }
 #footer .span5 {
   text-align: center;
 }
-#footer .row-fluid {
+#footer .container-fluid > .row-fluid {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -594,33 +632,44 @@ ul.sponsors { margin: 40px 0; }
     width: 100% !important;
   }
 }
-/* ===== Header watermark logo stronger visibility ===== */
+/* =====================================
+   IMAGE ONLY HEADER (FINAL FIX)
+   ===================================== */
+
 header.jumbotron.subhead {
-  position: relative;
-  overflow: hidden;
+
+    height: 200px;     
+    
+    background-image: url("../images/cover-1.png");
+    background-repeat: no-repeat;
+    background-position: center top;   /* ← KEY CHANGE */
+    background-size: cover;
+
+    padding: 0;
+    margin: 0;
 }
 
-header.jumbotron.subhead::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("../thumbs/apexlab-logo.png") no-repeat center;
-  background-size: 520px auto;
-  opacity: 0.50;                  /* for stronger look */
-  mix-blend-mode: screen;         /* makes logo more visible on dark background */
-  z-index: 1;
-  pointer-events: none;
-}
-
-header.jumbotron.subhead::after {
-  z-index: 0 !important;
-}
-
+/* Hide header text */
 header.jumbotron.subhead h1,
-header.jumbotron.subhead p.lead {
-  position: relative;
-  z-index: 2;
+header.jumbotron.subhead p,
+header.jumbotron.subhead .lead {
+    display: none;
 }
+
+
+/* =====================================
+   MOBILE
+   ===================================== */
+
+@media (max-width: 768px) {
+
+    header.jumbotron.subhead {
+        height: 170px;
+        background-position: center;
+    }
+
+}
+
 /* --- BlueImp Gallery Fix: Show Close button, hide Prev/Next --- */
 
 /* Close button visible */
@@ -638,9 +687,166 @@ header.jumbotron.subhead p.lead {
     display: none !important;
 }
 
-/* Full gallery always above everything */
-.blueimp-gallery,
-.blueimp-gallery > .slides,
-.blueimp-gallery-controls {
-    z-index: 99999 !important;
+/* ===== CAROUSEL FIXED HERO BANNER ===== */
+
+#main-carousel {
+    height: 500px;
+}
+
+#main-carousel .carousel-inner,
+#main-carousel .item {
+    height: 500px;
+    background-color: #fff;
+}
+
+#main-carousel .item img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+}
+
+/* =====================================
+   RESEARCH PAGE Picture and Text Alignment
+   ===================================== */
+
+/* Each research section = isolated */
+.research-block {
+    overflow: hidden;
+    clear: both;
+    margin-bottom: 40px;
+}
+
+/* Image behaviour */
+.research-block img {
+
+    width: 260px;
+    max-width: 40%;
+
+    height: auto;
+    max-height: 260px;
+
+    float: right;
+
+    margin-left: 25px;
+    margin-bottom: 10px;
+
+    border-radius: 4px;
+}
+
+/* Text justify */
+.research-block p {
+    text-align: justify;
+}
+
+/* CRITICAL FIX — prevents float collapse */
+.research-block::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* =====================================
+   RESEARCH PAGE SIDEBAR (FINAL FIX)
+   ===================================== */
+
+.research-page .bs-docs-sidebar {
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+    padding-bottom: 40px;
+}
+
+/* Sidebar -> scrollable */
+@media (min-width: 768px) {
+    .research-page .bs-docs-sidenav {
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+/* =====================================
+   MOBILE PERFECT FIX 
+   ===================================== */
+
+/* Images No overflow */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header image responsive */
+.jumbotron img,
+header img {
+    width: 100%;
+    height: auto;
+}
+
+/* Float collapse prevent */
+header {
+    overflow: hidden;
+}
+
+/* =====================================
+   MOBILE NAVBAR PERFECT FIX
+   ===================================== */
+
+@media (max-width: 767px) {
+
+    /* Menu vertical stack */
+    .navbar .nav {
+        display: block;
+        text-align: center;
+        float: none;
+    }
+
+    .navbar .nav li {
+        display: block;
+        float: none;
+        width: 100%;
+    }
+
+    .navbar .nav li a {
+        display: block;
+        padding: 12px 0;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+/* ===== CRITICAL RESEARCH PAGE FIX ===== */
+.research-page {
+    overflow-x: hidden;
+}
+
+/* =====================================
+   TRUE PAGE LAYOUT FIX
+   ===================================== */
+
+html, body {
+    height: 100%;
+}
+
+.research-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.research-page .container {
+    flex: 1;
+}
+
+#footer {
+    margin-top: 0;
+}
+
+/* =====================================
+   PUBLICATIONS PAGE LAYOUT FIX 
+   ===================================== */
+
+.publications-page #footer {
+    margin-top: 30px !important;
+}
+
+.publications-page .container > hr {
+    margin: 10px 0 !important;
 }
