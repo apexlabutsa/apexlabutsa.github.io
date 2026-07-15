@@ -5,9 +5,14 @@ body {
 }
 
 /* ========== Container ========== */
+/* ========== Container (full-width) ========== */
 .container {
+  width: auto !important;   /* overrides Bootstrap's fixed 940px/1170px */
+  max-width: none;          /* removes the 1000px cap */
   margin: 0 auto;
-  max-width: 1000px;
+  padding-left: 30px;       /* breathing room at the screen edges */
+  padding-right: 30px;
+  box-sizing: border-box;
 }
 .container > hr {
   margin: 20px 0;
