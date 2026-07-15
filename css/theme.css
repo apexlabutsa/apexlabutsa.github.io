@@ -15,22 +15,31 @@
 
 /* ========== Base spacing ========== */
 body {
-  padding-top: 15px;
-  padding-bottom: 0px;
+  padding-top: var(--page-padding);
+  padding-bottom: var(--page-padding);
 }
 
-/* ========== Container ========== */
 /* ========== Container (full-width) ========== */
+:root {
+  --page-padding: 60px;   /* ← change this one value to adjust spacing */
+}
+
 .container {
-  width: auto !important;   /* overrides Bootstrap's fixed 940px/1170px */
-  max-width: none;          /* removes the 1000px cap */
+  width: auto !important;
+  max-width: none;
   margin: 0 auto;
-  padding-left: 30px;       /* breathing room at the screen edges */
-  padding-right: 30px;
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
   box-sizing: border-box;
 }
 .container > hr {
   margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --page-padding: 20px;
+  }
 }
 
 /* ========== Navbar ========== */
