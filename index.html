@@ -51,10 +51,7 @@
     <!-- ================= PHOTO CAROUSEL =================
          To add a slide: copy one <div class="carousel-item"> block.
          Landscape photos (wider than tall) look best here. -->
-    <!-- Auto-rotation is intentionally OFF for accessibility (WCAG 2.2.2):
-         moving content disrupts screen reader and keyboard users.
-         Visitors browse slides with the arrow buttons. -->
-    <div id="heroCarousel" class="carousel slide hero-carousel">
+    <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="6000">
       <div class="carousel-inner">
 
         <div class="carousel-item active">
@@ -86,7 +83,7 @@
         </div>
 
         <div class="carousel-item">
-          <img src="images/apexlab_member_3.jpg" alt="APEX Lab graduate students">
+          <img src="images/apexlab_member_3.jpg" alt="APEX Lab graduate students" style="object-position: top;">
           <div class="carousel-caption">
             <h2>Graduate students</h2>
           </div>

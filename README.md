@@ -97,18 +97,9 @@ out of context. Put the meaning in the link text:
 - Bad: `Find the paper <a href="...">here</a>`
 - Good: `<a href="...">Read the paper: Beyond Accessibility (ASSETS 2025)</a>`
 
-**Don't re-enable carousel auto-rotation.** The carousel deliberately has no
-`data-bs-ride` attribute — auto-moving content violates WCAG 2.2.2 and disrupts screen
-reader users mid-read. Visitors use the arrow buttons instead.
-
 **Don't use justified text** (`text-align: justify`). It creates uneven word spacing that
 hurts readers with dyslexia and low vision. Left-aligned is the accessible default.
 
-**Check color contrast before changing `--brand-*` colors.** Test at
-https://webaim.org/resources/contrastchecker — body text and links need 4.5:1 against
-their background; the active-nav color needs 4.5:1 with white text on it. The current
-palette passes AA everywhere (that's why `--brand-accent-2` is #428079 and not a lighter
-teal — white text on the lighter shade failed).
 
 **Keep the heading order.** One `<h1>` per page (the banner), `<h2>` for sections,
 `<h3>` for items inside sections. Don't skip levels or pick headings for their size —
@@ -117,11 +108,6 @@ screen reader users navigate by heading structure.
 **Keep the built-in features intact when copying blocks:** the skip link at the top of
 `<body>`, `aria-label` on the two navs, `aria-current` on the active nav link, and the
 `alt`/`figcaption` pairs in the gallery.
-
-**Test occasionally.** Three quick checks that catch most problems:
-1. Keyboard-only: unplug the mouse and Tab through the page — everything reachable?
-2. VoiceOver (Cmd+F5 on a Mac): navigate by headings and links — does it read sensibly?
-3. Run the axe DevTools or WAVE browser extension, or Lighthouse's accessibility audit.
 
 ## Notes
 
