@@ -213,6 +213,8 @@ hr { border-top: 1px solid #e4e9e9; opacity: 1; margin: calc(var(--space) * 2) 0
   align-items: flex-start;
   margin-bottom: calc(var(--space) * 2.5);
 }
+/* Photos wrapped in a link must not be squeezed by the text column */
+.person > a { flex-shrink: 0; line-height: 0; }
 .person img {
   width: var(--headshot-size);
   height: var(--headshot-size);
@@ -225,6 +227,7 @@ hr { border-top: 1px solid #e4e9e9; opacity: 1; margin: calc(var(--space) * 2) 0
 .person p { margin-bottom: .4rem; }
 @media (max-width: 640px) {
   .person { flex-direction: column; }
+  .person > a { width: 100%; }
   .person img { width: 100%; height: 320px; }
 }
 
