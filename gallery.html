@@ -1,180 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Gallery</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Apex Lab, University of Texas San Antonio" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery — APEX Lab</title>
+  <meta name="description" content="Photo gallery of the APEX Lab, University of Texas at San Antonio">
+  <link rel="icon" type="image/png" href="favicons/favicon-gallery.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- GLightbox: click a photo to view it full size -->
+  <link href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-    <!-- CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
-    <link href="css/theme.css" rel="stylesheet" />
+  <!-- ================= BANNER =================
+       To change the banner, replace images/cover-1.png (keep it wide,
+       roughly 3.5:1). The alt text below is what screen readers announce. -->
+  <header class="site-header">
+    <h1>
+      <a href="index.html">
+        <img class="banner" src="images/cover-1.png"
+             alt="Accessibility and Privacy Enhancing EXperience (APEX) Lab — University of Texas at San Antonio">
+      </a>
+    </h1>
+  </header>
 
-    <!-- Blueimp CSS -->
-    <link href="css/blueimp-gallery.min.css" rel="stylesheet" />
-    <link href="css/blueimp-gallery-video.css" rel="stylesheet" />
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a class="active" href="gallery.html" aria-current="page">Gallery</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <style>
-      /* Fix Close, Prev, Next visibility */
-      .blueimp-gallery > .close,
-      .blueimp-gallery > .prev,
-      .blueimp-gallery > .next {
-        color: #fff;
-        text-shadow: 0px 0px 10px #000;
-        opacity: 0.9;
-        font-size: 45px;
-      }
-    </style>
-  </head>
+  <main id="main" class="page">
 
-  <body>
+    <h2 class="section-title">Image Gallery</h2>
 
-    <!-- Blueimp Gallery MUST be here at top of body -->
-    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
-      <div class="slides"></div>
-      <h3 class="title"></h3>
-      <a class="prev">‹</a>
-      <a class="next">›</a>
-      <a class="close">×</a>
-      <a class="play-pause"></a>
-      <ol class="indicator"></ol>
+    <!-- ================= GALLERY GRID =================
+         To add a photo: copy one <figure> block.
+         - href  = the full-size image (opens in the lightbox)
+         - src   = the same image, shown as the grid preview
+         - alt + figcaption = describe the photo (please always fill in)
+    -->
+    <div class="gallery-grid">
+
+      <figure>
+        <a href="images/abhinaya_poster.jpg" class="glightbox"
+           data-title="Abhinaya Guduru presenting a poster">
+          <img src="images/abhinaya_poster.jpg" alt="Abhinaya Guduru presenting a poster">
+        </a>
+        <figcaption>
+          Abhinaya Guduru presented a poster on financial abuse experienced by older adults
+          at the 2025 Undergraduate Research &amp; Creative Inquiry Showcase.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <a href="images/abhinaya_award_2.jpg" class="glightbox"
+           data-title="Abhinaya Guduru receiving award">
+          <img src="images/abhinaya_award_2.jpg" alt="Abhinaya Guduru receiving an award">
+        </a>
+        <figcaption>
+          Abhinaya Guduru receiving the Distinguished Research Award at the 2025 UTSA
+          Excellence in Sciences Awards.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <a href="images/Taslima_CIFellow_presentation.jpg" class="glightbox"
+           data-title="Dr. Akter presenting research">
+          <img src="images/Taslima_CIFellow_presentation.jpg" alt="Dr. Taslima Akter presenting research">
+        </a>
+        <figcaption>
+          Dr. Akter presenting her research on accessibility of collaborative tools
+          at CIFellow Workshop 2025.
+        </figcaption>
+      </figure>
+
     </div>
 
-    <div class="container">
+  </main>
 
-      <!-- HEADER -->
-      <header class="jumbotron subhead" id="overview">
-            <!--   <p class="lead"> University of Texas at San Antonio </p> -->
-            <!--   <h1>Accessibility and Privacy Enhancing EXperience (APEX) Lab</h1> -->
-      </header>
-
-      <!-- MENU -->
-      <div class="masthead">
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="container">
-              <ul class="nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="people.html">People</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li class="active"><a href="gallery.html">Gallery</a></li>
-                <!--   <li><a href="contact.html">Contact</a></li> -->
-              </ul>
-            </div>
-          </div>
-        </div>
+  <!-- ================= FOOTER (same on every page) ================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner row g-4">
+      <div class="col-md-5">
+        <h3>Contact Information</h3>
+        <p><strong>Dr. Taslima Akter</strong><br>
+          Assistant Professor<br>
+          University of Texas at San Antonio<br>
+          Computer Science | College of AI, Cyber and Computing</p>
+        <p><a href="mailto:taslima.akter@utsa.edu">Email: taslima.akter@utsa.edu</a></p>
       </div>
-
-      <hr />
-
-      <!-- MAIN GALLERY -->
-      <div class="row-fluid">
-        <div class="span12">
-          <section id="imagegallery1">
-            <div class="section-divider">
-              <h3>Image Gallery</h3>
-            </div>
-
-            <div class="row-fluid">
-              <ul class="thumbnails da-thumbs gallery-grid">
-
-                <!-- Image 1 -->
-                <li class="span4">
-                  <a title="Abhinaya Guduru presenting a poster" href="images/abhinaya_poster.jpg" class="thumbnail">
-                    <img alt="Abhinaya Guduru presenting poster" src="images/abhinaya_poster.jpg" />
-                  </a>
-                  <p class="caption">
-                    Abhinaya Guduru presented a poster on financial abuse experienced by older adults
-                    at the 2025 Undergraduate Research & Creative Inquiry Showcase.
-                  </p>
-                </li>
-
-                <!-- Image 2 -->
-                <li class="span4">
-                  <a title="Abhinaya Guduru receiving award" href="images/abhinaya_award_2.jpg" class="thumbnail">
-                    <img alt="Abhinaya Guduru receiving award" src="images/abhinaya_award_2.jpg" />
-                  </a>
-                  <p class="caption">
-                    Abhinaya Guduru receiving the Distinguished Research Award
-                    at the 2025 UTSA Excellence in Sciences Awards.
-                  </p>
-                </li>
-
-                <!-- Image 3 -->
-                <li class="span4">
-                  <a title="Dr. Akter presenting research" href="images/Taslima_CIFellow_presentation.jpg" class="thumbnail">
-                    <img alt="Dr. Taslima Akter presenting research" src="images/Taslima_CIFellow_presentation.jpg" />
-                  </a>
-                  <p class="caption">
-                    Dr. Akter is presenting her research on accessibility of collaborative tools
-                    at CIFellow Workshop 2025.
-                  </p>
-                </li>
-
-              </ul>
-            </div>
-          </section>
-        </div>
-      </div>
-    </div>
-
-    <footer id="footer" role="contentinfo" class="site-footer">
-  <div class="container-fluid">
-    <div class="row-fluid">
-      
-      <!-- Left: Contact Info -->
-      <div class="span5">
-       <h3>CONTACT INFORMATION</h3>
-      <p><strong>Dr. Taslima Akter</strong><br>
-      Assistant Professor<br>
-      University of Texas at San Antonio<br>
-      Computer Science | College of AI, Cyber and Computing<br>
-  <p>
-    <a class="footer-link email-link" href="mailto:taslima.akter@utsa.edu">
-      Email: taslima.akter@utsa.edu
-    </a>
-  </p>
-</div>
-
-      <!-- Center: Logo -->
-      <div class="span2 text-center">
-        <a href="index.html" aria-label="APEX Lab">
-          <img class="footer-logo" src="thumbs/apexlab-logo.png"
+      <div class="col-md-2 text-center">
+        <a href="index.html" aria-label="APEX Lab home">
+          <img class="footer-logo" src="images/apexlab-logo.png"
                alt="Accessibility and Privacy Enhancing EXperience (APEX) Lab logo">
         </a>
       </div>
-
-      <!-- Right: Address -->
-      <div class="span5">
-        <h3>ADDRESS</h3>
-        <p>
-          <strong>APEX Lab</strong><br>
+      <div class="col-md-5 text-md-end">
+        <h3>Address</h3>
+        <p><strong>APEX Lab</strong><br>
           506 Dolorosa St<br>
           San Antonio, Texas<br>
-          USA 78204<br>
-        <a class="footer-btn" href="https://maps.app.goo.gl/StTmXfGu2sQjGXqVA">Show Map</a>
-        </p>
+          USA 78204</p>
+        <p><a href="https://maps.app.goo.gl/StTmXfGu2sQjGXqVA">Show map</a></p>
       </div>
     </div>
-  </div>
+    <div class="footer-bottom">
+      © <span id="year"></span> Accessibility and Privacy Enhancing EXperience (APEX) Lab •
+      University of Texas at San Antonio (UT San Antonio)
+    </div>
+  </footer>
 
-  <!-- Bottom copyright line -->
-  <div class="footer-bottom">
-    © <span id="year"></span> Accessibility and Privacy Enhancing EXperience (APEX) Lab •
-    University of Texas at San Antonio
-  </div>
-</footer>
-
-<!-- JS files -->
-<script src="js/jquery-1.9.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const y = document.getElementById("year");
-    if (y) y.textContent = new Date().getFullYear();
-  });
-</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

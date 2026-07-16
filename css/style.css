@@ -1,0 +1,350 @@
+/* ============================================================
+   APEX Lab — custom styles
+   Everything you normally want to tweak lives in :root below.
+   Layout/grid comes from Bootstrap 5 (loaded via CDN in HTML).
+   ============================================================ */
+
+:root {
+  /* ---- Colors (change these to re-theme the whole site) ---- */
+  --brand-primary:  #0F4C5C;   /* navbar, footer, headings */
+  --brand-accent:   #3D7A73;   /* links, hover highlights */
+  --brand-accent-2: #428079;   /* active nav item, highlights (AA-checked: white text on this passes 4.5:1) */
+  --brand-bg:       #F2F6F6;   /* soft card / section background */
+  --brand-text:     #2B2B2B;   /* body text */
+  --footer-link:    #B8D8D4;   /* links on the dark footer */
+
+  /* ---- Sizes ---- */
+  --page-max-width: 1400px;    /* content width cap (keeps lines readable) */
+  --page-padding:   32px;      /* space at the left/right screen edges */
+  --space:          1rem;      /* master vertical spacing unit — lower = more compact */
+  --carousel-height: 540px;    /* homepage banner height */
+  --thumb-height:   300px;     /* gallery thumbnail height */
+  --headshot-size:  220px;     /* people page photo size */
+
+  /* ---- Fonts ---- */
+  --font-body:    'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font-display: 'Space Grotesk', var(--font-body);
+}
+
+/* ============ Base ============ */
+
+body {
+  font-family: var(--font-body);
+  font-size: 1.05rem;          /* ~17px, comfortable reading size */
+  line-height: 1.7;
+  color: var(--brand-text);
+  background: #ffffff;
+}
+
+.page {                         /* main content wrapper on every page */
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  color: var(--brand-primary);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h2.section-title {
+  font-size: 1.7rem;
+  margin: calc(var(--space) * 2.5) 0 calc(var(--space) * 1.25);
+  padding-bottom: .5rem;
+  border-bottom: 3px solid var(--brand-accent-2);
+  display: inline-block;
+}
+
+a { color: var(--brand-accent); text-decoration: none; }
+a:hover, a:focus { color: var(--brand-primary); text-decoration: underline; }
+
+/* Visible keyboard focus — important for accessibility */
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--brand-accent-2);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Skip link: hidden until focused with the keyboard */
+.skip-link {
+  position: absolute; left: -9999px;
+  background: var(--brand-primary); color: #fff;
+  padding: .6rem 1rem; z-index: 2000; border-radius: 0 0 6px 0;
+}
+.skip-link:focus { left: 0; top: 0; color: #fff; }
+
+img { max-width: 100%; height: auto; }
+
+hr { border-top: 1px solid #e4e9e9; opacity: 1; margin: calc(var(--space) * 2) 0; }
+
+/* ============ Site header (banner image) ============ */
+
+.site-header {
+  text-align: center;
+  padding: calc(var(--space) * 1.25) var(--page-padding) var(--space);
+}
+.site-header h1 { margin: 0; }
+.site-header .banner {
+  width: 100%;
+  max-width: var(--page-max-width);
+  height: auto;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+/* ============ Navbar (same structure as before: equal cells) ============ */
+
+.site-nav {
+  background: var(--brand-primary);
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+.site-nav .nav-inner {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+}
+.site-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.site-nav li { flex: 1; }        /* every link gets an equal share */
+.site-nav a {
+  display: block;
+  text-align: center;
+  padding: .9rem .5rem;
+  color: #ffffff;
+  font-weight: 600;
+  font-family: var(--font-display);
+  letter-spacing: .02em;
+  border-right: 1px solid rgba(255,255,255,.12);
+  transition: background .15s ease;
+}
+.site-nav li:last-child a { border-right: none; }
+.site-nav a:hover, .site-nav a:focus {
+  background: var(--brand-accent);
+  color: #fff;
+  text-decoration: none;
+}
+.site-nav a.active {
+  background: var(--brand-accent-2);
+  color: #fff;
+}
+
+/* Mobile: stack the links */
+@media (max-width: 768px) {
+  .site-nav ul { flex-direction: column; }
+  .site-nav a { border-right: none; border-bottom: 1px solid rgba(255,255,255,.12); }
+}
+
+/* ============ Homepage: carousel ============ */
+
+.hero-carousel {
+  max-width: 950px;
+  margin: calc(var(--space) * 2) auto;
+}
+.hero-carousel .carousel-item img {
+  width: 100%;
+  height: var(--carousel-height);
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+}
+.hero-carousel .carousel-caption {
+  background: rgba(15, 76, 92, .82);   /* teal, slightly transparent */
+  border-radius: 8px;
+  padding: .6rem 1.2rem;
+  left: 5%; right: 5%; bottom: 1rem;
+}
+.hero-carousel .carousel-caption h2 {
+  color: #fff;
+  font-size: 1.05rem;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .hero-carousel .carousel-item img { height: 280px; }
+  .hero-carousel .carousel-caption h2 { font-size: .9rem; }
+}
+
+/* ============ Homepage: news cards ============ */
+
+.news-card {
+  background: var(--brand-bg);
+  border-radius: 12px;
+  padding: 1.4rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(15, 76, 92, .12);
+}
+.news-card .date {
+  font-size: .85rem;
+  color: var(--brand-accent);
+  font-weight: 600;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+.news-card h3 { font-size: 1.05rem; margin: .4rem 0 .9rem; }
+.news-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: .9rem;
+}
+.news-card img.fit-contain {      /* for screenshots / figures with text */
+  object-fit: contain;
+  background: #ffffff;
+}
+.news-card p { margin-bottom: 0; font-size: .95rem; }
+
+/* ============ People page ============ */
+
+.person {
+  display: flex;
+  gap: calc(var(--space) * 2);
+  align-items: flex-start;
+  margin-bottom: calc(var(--space) * 2.5);
+}
+.person img {
+  width: var(--headshot-size);
+  height: var(--headshot-size);
+  object-fit: cover;
+  object-position: top;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+.person h3 { margin-top: 0; font-size: 1.25rem; }
+.person p { margin-bottom: .4rem; }
+@media (max-width: 640px) {
+  .person { flex-direction: column; }
+  .person img { width: 100%; height: 320px; }
+}
+
+/* ============ Research page ============ */
+
+.side-nav {
+  position: sticky;
+  top: 70px;                        /* sits below the sticky navbar */
+  background: var(--brand-bg);
+  border-radius: 12px;
+  padding: 1rem;
+  font-size: .95rem;
+}
+.side-nav ul { list-style: none; margin: 0; padding: 0; }
+.side-nav a {
+  display: block;
+  padding: .45rem .6rem;
+  border-radius: 6px;
+  color: var(--brand-primary);
+  font-weight: 600;
+}
+.side-nav a.sub {
+  padding-left: 1.4rem;
+  font-weight: 400;
+  font-size: .9rem;
+}
+.side-nav a:hover, .side-nav a:focus {
+  background: var(--brand-accent-2);
+  color: #fff;
+  text-decoration: none;
+}
+/* Highlight for the section currently in view (same look as hover) */
+.side-nav a.active {
+  background: var(--brand-accent-2);
+  color: #fff;
+}
+
+.research-block { margin-bottom: calc(var(--space) * 2.5); }
+.research-block img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: contain;              /* research figures: never crop */
+  background: var(--brand-bg);
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+/* offset anchor targets so the sticky navbar doesn't cover headings */
+.research-block, section[id] { scroll-margin-top: 80px; }
+
+/* ============ Publications page ============ */
+
+.pub-list { padding-left: 1.4rem; }
+.pub-list li {
+  margin-bottom: calc(var(--space) * 1.4);
+  padding-left: .4rem;
+}
+.pub-list li::marker { color: var(--brand-accent); font-weight: 700; }
+
+/* ============ Gallery page ============ */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: calc(var(--space) * 1.5);
+}
+@media (max-width: 900px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .gallery-grid { grid-template-columns: 1fr; } }
+
+.gallery-grid figure { margin: 0; }
+.gallery-grid img {
+  width: 100%;
+  height: var(--thumb-height);
+  object-fit: cover;
+  object-position: top;
+  border-radius: 12px;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.gallery-grid a:hover img, .gallery-grid a:focus img {
+  transform: scale(1.02);
+  box-shadow: 0 10px 24px rgba(15, 76, 92, .18);
+}
+.gallery-grid figcaption {
+  font-size: .92rem;
+  margin-top: .6rem;
+  color: #555;
+}
+
+/* ============ Footer ============ */
+
+.site-footer {
+  background: var(--brand-primary);
+  color: #ffffff;
+  margin-top: calc(var(--space) * 4);
+  padding: calc(var(--space) * 3) var(--page-padding) 0;
+}
+.site-footer .footer-inner {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+}
+.site-footer h3 {
+  color: #ffffff;
+  font-size: 1.05rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.site-footer a { color: var(--footer-link); }
+.site-footer a:hover, .site-footer a:focus { color: #ffffff; }
+.site-footer .footer-logo { width: 170px; height: auto; }
+.footer-bottom {
+  text-align: center;
+  font-size: .88rem;
+  border-top: 1px solid rgba(255,255,255,.18);
+  margin-top: 2rem;
+  padding: 1.2rem 0;
+  color: rgba(255,255,255,.85);
+}
+
+/* ============ Motion preferences (accessibility) ============ */
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+  .carousel-item { transition: none !important; }
+}
