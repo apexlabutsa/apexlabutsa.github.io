@@ -134,10 +134,25 @@ hr { border-top: 1px solid #e4e9e9; opacity: 1; margin: calc(var(--space) * 2) 0
   color: #fff;
 }
 
-/* Mobile: stack the links */
+/* Mobile: keep links side by side, just smaller.
+   Future-proofing: if a 6th nav item is ever added, the bar scrolls
+   sideways on narrow phones instead of crushing the labels. */
 @media (max-width: 768px) {
-  .site-nav ul { flex-direction: column; }
-  .site-nav a { border-right: none; border-bottom: 1px solid rgba(255,255,255,.12); }
+  .site-nav ul {
+    overflow-x: auto;                   /* enables sideways scroll on overflow */
+    -webkit-overflow-scrolling: touch;  /* smooth scrolling on iOS */
+    scrollbar-width: thin;
+  }
+  .site-nav li {
+    flex: 1 0 auto;      /* share space equally, but never shrink below... */
+    min-width: 74px;     /* ...this — 5 items fit a phone; 6+ scroll */
+  }
+  .site-nav a {
+    font-size: .78rem;   /* smaller text so all five fit */
+    padding: .8rem .5rem;
+    letter-spacing: 0;
+    white-space: nowrap; /* labels never wrap to two lines */
+  }
 }
 
 /* ============ Homepage: carousel ============ */

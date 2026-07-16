@@ -27,6 +27,7 @@ people.html         Team members (with section sidebar)
 research.html       Research areas (with section sidebar)
 publications.html   Publication lists
 gallery.html        Photo gallery with lightbox
+404.html            "Page not found" page (GitHub Pages serves it automatically)
 css/style.css       ALL custom styles — settings at the top
 js/main.js          Tiny script (footer year, lightbox, sidebar highlight)
 images/             All photos, figures, and the banner
@@ -73,7 +74,8 @@ automatically — no extra setup.
 `<figure>` block and update `href`, `src`, `alt`, and the caption.
 
 **Add a carousel slide** → `index.html`, copy one `<div class="carousel-item">` block.
-Use landscape (wider-than-tall) photos; portrait photos get heavily cropped.
+Use landscape (wider-than-tall) photos; portrait photos get heavily cropped. If a photo's
+subject is cut off at the top, add `style="object-position: top;"` to that one `<img>`.
 
 **Add a new section to a sidebar page** → add the `<h2 class="section-title" id="...">`
 in the content column and a matching `<a href="#...">` in that page's sidebar list.
@@ -81,8 +83,42 @@ in the content column and a matching `<a href="#...">` in that page's sidebar li
 **Change the banner** → replace `images/cover-1.png` (keep it wide, roughly 3.5:1).
 
 **Add a new page** → copy `publications.html` (simplest layout), update the `<title>`,
-favicon link, and content. Add the nav link to the navbar `<ul>` on EVERY page, and move
-`class="active"` + `aria-current="page"` to the new page's own link in its file.
+favicon link, the social preview tags (see below), and content. Add the nav link to the
+navbar `<ul>` on EVERY page (including `404.html`), and move `class="active"` +
+`aria-current="page"` to the new page's own link in its file. Note: the mobile navbar fits
+5 items side by side; a 6th makes the bar swipe sideways on phones (already handled in the
+CSS — nothing to change, just know it happens).
+
+**Add an image anywhere** → give it `loading="lazy"` so phones don't download it until the
+visitor scrolls near it, UNLESS it's visible immediately on page load (the banner and the
+first carousel slide are deliberately not lazy — keep it that way).
+
+**Add an external link** → use this pattern so it's safe and screen-reader friendly:
+```html
+<a href="https://example.com" target="_blank" rel="noopener">Link
+  text<span class="visually-hidden"> (opens in new tab)</span></a>
+```
+`rel="noopener"` always accompanies `target="_blank"`; the hidden span warns screen reader
+users before a new tab opens. Never put `target="_blank"` on `mailto:` links.
+
+## Social sharing previews
+
+Each page's `<head>` has Open Graph / Twitter tags (`og:title`, `og:description`,
+`og:image`, `og:url`) so links shared in Slack, Teams, or on social media show a preview
+card with the banner image. Two maintenance notes:
+
+- New pages need their own set — copy the block from an existing page and edit the title,
+  description, and URL.
+- The `og:url` and `og:image` values are absolute URLs pointing at
+  `https://aktertaslima.github.io/apexlab/`. **If the site ever moves to a custom domain,
+  search all pages for `og:` and update the base URL.**
+
+## The 404 page
+
+`404.html` at the repo root is served automatically by GitHub Pages for any broken or
+mistyped URL. It matches the site template and points visitors to the main pages. It has
+`noindex` so search engines skip it, and no nav item is marked active. If the navbar or
+footer changes, update this file along with the other five.
 
 ## Accessibility checklist (please keep this — it's our lab's own site)
 
@@ -97,9 +133,19 @@ out of context. Put the meaning in the link text:
 - Bad: `Find the paper <a href="...">here</a>`
 - Good: `<a href="...">Read the paper: Beyond Accessibility (ASSETS 2025)</a>`
 
+**Announce new tabs.** Every `target="_blank"` link carries `rel="noopener"` and a
+`<span class="visually-hidden"> (opens in new tab)</span>` inside the link (see the
+external-link pattern above). Keep both when adding links.
+
+**Carousel auto-rotation is ON — know the tradeoff.** The homepage carousel currently
+auto-rotates (`data-bs-ride="carousel"`). Strict WCAG 2.2.2 prefers no auto-movement or a
+visible pause control; rotation is a deliberate visual choice here, and hovering pauses it.
+If the site is ever formally audited or showcased to the accessibility community, either
+remove `data-bs-ride="carousel" data-bs-interval="6000"` from the carousel tag (that's the
+whole change) or add a pause button.
+
 **Don't use justified text** (`text-align: justify`). It creates uneven word spacing that
 hurts readers with dyslexia and low vision. Left-aligned is the accessible default.
-
 
 **Keep the heading order.** One `<h1>` per page (the banner), `<h2>` for sections,
 `<h3>` for items inside sections. Don't skip levels or pick headings for their size —
@@ -109,10 +155,14 @@ screen reader users navigate by heading structure.
 `<body>`, `aria-label` on the two navs, `aria-current` on the active nav link, and the
 `alt`/`figcaption` pairs in the gallery.
 
+**Test occasionally.** Three quick checks that catch most problems:
+1. Keyboard-only: unplug the mouse and Tab through the page — everything reachable?
+2. VoiceOver (Cmd+F5 on a Mac): navigate by headings and links — does it read sensibly?
+
 ## Notes
 
 - Keep photos under ~1920px on the long edge before uploading (large phone photos slow
-  the site down).
+  the site down). Prefer JPEG for photos; PNG only for figures with sharp lines or text.
 - Bootstrap and the lightbox load from cdn.jsdelivr.net — no local copies to update.
-- The footer is duplicated in each page; if contact info changes, update all five files
-  (search for "Contact Information").
+- The footer is duplicated in each page; if contact info changes, update all SIX files —
+  the five main pages plus `404.html` (search for "Contact Information").
