@@ -1,12 +1,12 @@
 # ---- Operating system files ----
-.DS_Store            # macOS folder metadata (you have these already)
+.DS_Store            # macOS folder metadata
 .DS_Store?
 ._*                  # macOS resource forks
 Thumbs.db            # Windows thumbnail cache
 Desktop.ini
 
 # ---- Editor / IDE settings ----
-.idea/               # JetBrains (PyCharm/WebStorm) — was in your repo
+.idea/               # JetBrains
 .vscode/             # VS Code workspace settings
 *.sublime-workspace
 *.swp                # Vim swap files
