@@ -91,7 +91,8 @@ CSS — nothing to change, just know it happens).
 
 **Add an image anywhere** → give it `loading="lazy"` so phones don't download it until the
 visitor scrolls near it, UNLESS it's visible immediately on page load (the banner and the
-first carousel slide are deliberately not lazy — keep it that way).
+first carousel slide are deliberately not lazy — keep it that way). Add `style="object-position: center 40%;"` inside the `img` tag to 
+control the thumbnail. Example can be found in `gallery.html` page.
 
 **Add an external link** → use this pattern so it's safe and screen-reader friendly:
 ```html
@@ -162,7 +163,7 @@ screen reader users navigate by heading structure.
 ## Notes
 
 - Keep photos under ~1920px on the long edge before uploading (large phone photos slow
-  the site down). Prefer JPEG for photos; PNG only for figures with sharp lines or text.
+  the site down). Prefer JPEG for photos.
 - Bootstrap and the lightbox load from cdn.jsdelivr.net — no local copies to update.
 - The footer is duplicated in each page; if contact info changes, update all SIX files —
   the five main pages plus `404.html` (search for "Contact Information").
