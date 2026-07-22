@@ -15,7 +15,7 @@
 
   /* ---- Sizes ---- */
   --page-max-width: 1500px;    /* content width cap (keeps lines readable) */
-  --page-padding:   32px;      /* space at the left/right screen edges */
+  --page-padding:   90px;      /* space at the left/right screen edges */
   --space:          1rem;      /* master vertical spacing unit — lower = more compact */
   --carousel-height: 540px;    /* homepage banner height */
   --thumb-height:   300px;     /* gallery thumbnail height */
