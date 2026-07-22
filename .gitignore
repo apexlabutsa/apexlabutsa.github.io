@@ -1,5 +1,5 @@
 # ---- Operating system files ----
-.DS_Store            # macOS folder metadata
+.DS_Store          # macOS folder metadata
 .DS_Store?
 ._*                  # macOS resource forks
 Thumbs.db            # Windows thumbnail cache
