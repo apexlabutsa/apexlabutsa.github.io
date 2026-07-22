@@ -111,7 +111,7 @@ card with the banner image. Two maintenance notes:
 - New pages need their own set — copy the block from an existing page and edit the title,
   description, and URL.
 - The `og:url` and `og:image` values are absolute URLs pointing at
-  `https://aktertaslima.github.io/apexlab/`. **If the site ever moves to a custom domain,
+  `https://apexlabutsa.github.io/`. **If the site ever moves to a custom domain,
   search all pages for `og:` and update the base URL.**
 
 ## The 404 page
