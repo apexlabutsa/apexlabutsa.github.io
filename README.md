@@ -164,6 +164,8 @@ screen reader users navigate by heading structure.
 
 - Keep photos under ~1920px on the long edge before uploading (large phone photos slow
   the site down). Prefer JPEG for photos.
+- Try to avoid using `!important` to override css styles. All styles should go to
+  the `styles.css` file to keep the html files clean.
 - Bootstrap and the lightbox load from cdn.jsdelivr.net — no local copies to update.
 - The footer is duplicated in each page; if contact info changes, update all SIX files —
   the five main pages plus `404.html` (search for "Contact Information").
