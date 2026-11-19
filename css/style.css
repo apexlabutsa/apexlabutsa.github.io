@@ -388,6 +388,20 @@ hr { border-top: 1px solid #e4e9e9; opacity: 1; margin: calc(var(--space) * 2) 0
   color: rgba(255,255,255,.85);
 }
 
+/* Research page: small thumbnail on the left, text wraps beside it */
+.research-block img {
+  float: left;
+  width: 200px;
+  max-height: 160px;
+  margin: .35rem 1.5rem .75rem 0;
+}
+.research-block h4,
+.research-block .pub-list { clear: left; }
+.research-block::after { content: ""; display: table; clear: both; }
+@media (max-width: 576px) {
+  .research-block img { float: none; width: 100%; max-height: 200px; margin: .75rem 0; }
+}
+
 /* ============ Motion preferences (accessibility) ============ */
 
 @media (prefers-reduced-motion: reduce) {
